@@ -1,0 +1,49 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ */
+
+/**
+ * This uses the background and foreground colors declared in the `theme.json`
+ * file and is applied both to the front end and in the block editor.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+	@apply bg-background text-foreground font-sans;
+}
+
+.bg-light {
+	background-color: #ffffff; /* Light mode background */
+}
+
+.bg-dark {
+	background-color: #111827; /* Dark mode background */
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading font-medium;
+}
+h2 {
+	@apply pb-4 text-7xl;
+}
+h3 {
+	@apply pb-4 text-6xl;
+}
+h4 {
+	@apply pb-4 text-5xl;
+}
+h5 {
+	@apply pb-4 text-4xl;
+}
+h6 {
+	@apply pb-4 text-3xl;
+}
+
+.default-transition {
+	@apply transition-all duration-300;
+}
