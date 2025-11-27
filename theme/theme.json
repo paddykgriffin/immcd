@@ -11,28 +11,28 @@
 				},
 				{
 					"slug": "foreground",
-					"color": "#404040",
+					"color": "#121212",
 					"name": "Foreground"
 				},
 				{
 					"slug": "primary",
-					"color": "#b91c1c",
+					"color": "#2F5755",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#15803d",
+					"color": "#5A9690",
 					"name": "Secondary"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#0369a1",
+					"color": "#432323",
 					"name": "Tertiary"
 				}
 			]
 		},
 		"layout": {
-			"contentSize": "40rem",
+			"contentSize": "50rem",
 			"wideSize": "60rem"
 		}
 	}

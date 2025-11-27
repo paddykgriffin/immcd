@@ -81,7 +81,9 @@ if ( ! function_exists( 'immanuel_church_dublin_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => __( 'Primary', 'immanuel-church-dublin' ),
-				'menu-2' => __( 'Footer Menu', 'immanuel-church-dublin' ),
+				'menu-2' => __( 'Footer', 'immanuel-church-dublin' ),
+				'menu-3' => __( 'Contact', 'immanuel-church-dublin' ),
+				'menu-4' => __( 'Privacy', 'immanuel-church-dublin' ),
 			)
 		);
 
@@ -146,11 +148,8 @@ add_action( 'widgets_init', 'immanuel_church_dublin_widgets_init' );
 function immanuel_church_dublin_scripts() {
 	wp_enqueue_style( 'immanuel-church-dublin-style', get_stylesheet_uri(), array(), IMMANUEL_CHURCH_DUBLIN_VERSION );
 	wp_enqueue_script( 'immanuel-church-dublin-script', get_template_directory_uri() . '/js/script.min.js', array(), IMMANUEL_CHURCH_DUBLIN_VERSION, true );
-
-
-		wp_enqueue_script('immanuel-church-dublin-custom-script', get_template_directory_uri() . '/js/custom.min.js', array(), IMMANUEL_CHURCH_DUBLIN_VERSION, true);
-
-
+	wp_enqueue_script('immanuel-church-dublin-custom-script', get_template_directory_uri() . '/js/custom.min.js', array(), IMMANUEL_CHURCH_DUBLIN_VERSION, true);
+	wp_enqueue_script('immanuel-church-dublin-theme-script', get_template_directory_uri() . '/js/theme-toggle.min.js', array(), IMMANUEL_CHURCH_DUBLIN_VERSION, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -265,3 +264,40 @@ add_action('wp_enqueue_scripts', 'enqueue_google_icons');
  * Hide admin bar
  */
 add_filter('show_admin_bar', '__return_false');
+
+
+/**
+ * Add SVG to allowed upload file types
+ */
+function add_file_types_to_uploads($file_types){
+$new_filetypes = array();
+$new_filetypes['svg'] = 'image/svg+xml';
+$file_types = array_merge($file_types, $new_filetypes );
+return $file_types;
+}
+add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+function wpse_remove_edit_post_link($link)
+{
+	return '';
+}
+add_filter('edit_post_link', 'wpse_remove_edit_post_link');
+
+/**
+ * Function custom link on the primary menu
+ */
+function add_primary_menu_link($atts, $item, $args, $depth)
+{
+
+	$menu_locations = ['menu-1']; // Define the menu locations
+
+	if (in_array($args->theme_location, $menu_locations)) {
+		$atts['class'] = 'primary-nav-link default-transition'; // Add your custom class
+	}
+	return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_primary_menu_link', 10, 4);
+

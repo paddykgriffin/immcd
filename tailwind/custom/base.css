@@ -29,7 +29,7 @@ h6 {
 	@apply font-heading font-medium;
 }
 h2 {
-	@apply pb-4 text-7xl;
+	@apply pb-4 text-5xl;
 }
 h3 {
 	@apply pb-4 text-6xl;
@@ -44,6 +44,20 @@ h6 {
 	@apply pb-4 text-3xl;
 }
 
+/* Block Editor Overwrite */
+.wp-block-button__link {
+	@apply hover:!bg-secondary mt-2 flex justify-between !rounded-full px-5 py-2 text-xl font-light transition-all duration-300;
+}
+
+.wp-block-button__link img {
+	@apply ml-12;
+}
+
 .default-transition {
 	@apply transition-all duration-300;
 }
+
+.page p {
+	@apply text-xl tracking-tight;
+}
+

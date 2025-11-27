@@ -1,27 +1,31 @@
+import './theme-toggle.js';
+
 // Dark Mode Toggle
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleButtons = document.querySelectorAll(".darkModeToggle");
-    const rootElement = document.documentElement; 
+// NOTE: legacy button-based toggle logic remains below for backward compatibility.
+// The new module `theme-toggle.js` handles the checkbox-based toggle used in the header.
+// document.addEventListener("DOMContentLoaded", function() {
+//     const toggleButtons = document.querySelectorAll(".darkModeToggle");
+//     const rootElement = document.documentElement; 
 
-    // Check localStorage for dark mode preference
-    if (localStorage.getItem("theme") === "dark") {
-        rootElement.classList.add("dark");
-    } else {
-        rootElement.classList.remove("dark"); // Ensure light mode is applied
-    }
+//     // Check localStorage for dark mode preference
+//     if (localStorage.getItem("theme") === "dark") {
+//         rootElement.classList.add("dark");
+//     } else {
+//         rootElement.classList.remove("dark"); // Ensure light mode is applied
+//     }
 
-    toggleButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            if (rootElement.classList.contains("dark")) {
-                rootElement.classList.remove("dark");
-                localStorage.setItem("theme", "light");
-            } else {
-                rootElement.classList.add("dark");
-                localStorage.setItem("theme", "dark");
-            }
-        });
-    });
-});
+//     toggleButtons.forEach(button => {
+//         button.addEventListener("click", function() {
+//             if (rootElement.classList.contains("dark")) {
+//                 rootElement.classList.remove("dark");
+//                 localStorage.setItem("theme", "light");
+//             } else {
+//                 rootElement.classList.add("dark");
+//                 localStorage.setItem("theme", "dark");
+//             }
+//         });
+//     });
+// });
 
  // Sidebar Toggle
  function openNav() {
