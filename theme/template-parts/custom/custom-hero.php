@@ -1,4 +1,4 @@
-<section class="grid relative">
+<section class="grid relative hero">
 
     <!-- Image -->
     <?php
@@ -54,4 +54,4 @@
         </div><!-- .container -->
     </div>
 
-</section> <!-- section end -->
+</section> 

@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('bg-white dark:bg-stone-900'); ?>>
+<body <?php body_class('bg-background font-sans text-foreground'); ?>>
 
 <?php wp_body_open(); ?>
 

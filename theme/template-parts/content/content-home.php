@@ -9,7 +9,7 @@
  */
 
 ?>
-
+<section>
 <div id="welcome-<?php the_ID(); ?>" <?php post_class('grid md:grid-cols-2 container items-center mx-auto gap-16  py-6 md:pt-24 md:pb-36 dark:text-white '); ?>>
 	<div <?php immanuel_church_dublin_content_class('home-block pr-24'); ?>>
 		<header class="entry-header dark:text-white">
@@ -58,4 +58,6 @@
 
 	<?php endif; ?>
 
-</div><!-- #post-<?php the_ID(); ?> -->
+</div>
+</section>
+<!-- #post-<?php the_ID(); ?> -->

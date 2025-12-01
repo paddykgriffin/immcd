@@ -17,13 +17,20 @@
 	 * If you are using the classic editor, you should use hardcoded color
 	 * values instead of the `var()` functions below.
      */
-	--color-background: var(--wp--preset--color--background);
-	--color-foreground: var(--wp--preset--color--foreground);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+
 	--color-primary: var(--wp--preset--color--primary);
 	--color-secondary: var(--wp--preset--color--secondary);
 	--color-tertiary: var(--wp--preset--color--tertiary);
+
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
+
+	--color-border: var(--border);
 
 	/**
 	 * These are the default `font-family` theme variables included with
@@ -51,4 +58,22 @@
 
 	--font-sans: "Noto Sans", sans-serif;
 	--font-heading: "Poppins", sans-serif;
+}
+
+@layer base {
+	:root {
+		--background: hsl(0, 0, 100%);
+		--foreground: hsl(224, 72%, 5%);
+		--card: hsl(0, 0%, 100%);
+		--card-foreground: hsl(224, 72%, 5%);
+		--border: hsl(210, 16%, 87%);
+	}
+
+	.dark {
+		--background: #151415;
+		--foreground: hsl(210, 20%, 98%);
+		--card: hsl(286, 4%, 16%);
+		--card-foreground: hsl(210, 20%, 98%);
+		--border: hsl(210, 16%, 25%);
+	}
 }

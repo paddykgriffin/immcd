@@ -19,7 +19,7 @@ get_header();
 <!-- #hero -->
 
 
-<section id="front-page">
+
     <?php
     /* Start the Loop */
     while (have_posts()):
@@ -41,8 +41,6 @@ get_header();
 
 
 
-</section>
-<!-- #front-page -->
 
 
 <?php

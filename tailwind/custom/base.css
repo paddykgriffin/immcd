@@ -9,18 +9,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-body {
-	@apply bg-background text-foreground font-sans;
-}
-
-.bg-light {
-	background-color: #ffffff; /* Light mode background */
-}
-
-.bg-dark {
-	background-color: #111827; /* Dark mode background */
-}
-
 h2,
 h3,
 h4,
@@ -60,4 +48,3 @@ h6 {
 .page p {
 	@apply text-xl tracking-tight;
 }
-

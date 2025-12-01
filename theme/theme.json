@@ -6,12 +6,12 @@
 			"palette": [
 				{
 					"slug": "background",
-					"color": "#ffffff",
+					"color": "#FFFFFF",
 					"name": "Background"
 				},
 				{
 					"slug": "foreground",
-					"color": "#121212",
+					"color": "#2F5755",
 					"name": "Foreground"
 				},
 				{

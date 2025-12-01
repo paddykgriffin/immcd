@@ -9,7 +9,7 @@
 
 ?>
 
-<header id="masthead" class="bg-white dark:bg-black fixed z-[40] w-full top-0 shadow-xl py-3">
+<header id="masthead" class="bg-white dark:bg-black fixed z-[40] w-full top-0 shadow-xl py-3 dark:border-b dark:border-gray-500">
 
 	<div class="container">
 
