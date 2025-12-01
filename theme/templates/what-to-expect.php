@@ -9,12 +9,11 @@
 get_header();
 ?>
 
-<section id="primary">
-		<main id="main">
+<main id="main">
 
 <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
 
-<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<div <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
     <div class="container">
         <div class="grid grid-cols-12 gap-16 items-center">
             <div class="col-span-7">
@@ -45,10 +44,10 @@ get_header();
             </div>
         </div>
    </div>
-</section>
+</div>
 
 
-<section <?php immanuel_church_dublin_content_class( ' md:py-24 bg-gray-100 dark:bg-black' ); ?>>
+<div <?php immanuel_church_dublin_content_class( ' md:py-24 bg-gray-100 dark:bg-black' ); ?>>
    <div class="container text-center">
 
 
@@ -99,7 +98,7 @@ get_header();
 </div>
 
 
-<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<div <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
     <div class="container">
         <div class="grid grid-cols-12 gap-16 items-center">
             <div class="col-span-7">
@@ -130,10 +129,10 @@ get_header();
             </div>
         </div>
    </div>
-</section>
+</div>
 
 	</main><!-- #main -->
-	</section><!-- #primary -->
+
 
 <?php
 get_footer();

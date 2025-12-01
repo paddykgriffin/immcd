@@ -28,5 +28,3 @@
 
 	<?php get_template_part( 'template-parts/layout/header/header', 'content' ); ?>
 
-	<div id="content">
- 

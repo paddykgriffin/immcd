@@ -9,11 +9,11 @@
 
 ?>
 
-<footer id="colophon" class="bg-black text-white">
+<footer class="bg-black text-white">
 	<?php get_template_part('template-parts/layout/footer/footer', 'row1'); ?>
 	<?php get_template_part('template-parts/layout/footer/footer', 'row2'); ?>
 
 	
 
 	
-</footer><!-- #colophon -->
+</footer><!-- end footer -->

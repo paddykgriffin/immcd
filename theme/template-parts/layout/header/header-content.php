@@ -64,4 +64,4 @@
 
 	</div><!-- .container -->
 
-</header><!-- #masthead -->
+</header><!-- end #masthead -->
