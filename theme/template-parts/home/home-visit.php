@@ -1,4 +1,4 @@
-<section class=" py-6 md:pt-18 md:pb-32">
+<section class=" py-6 md:pt-18 md:pb-32" id="visit">
     <div class="container">
        <h2 class="entry-title text-center mb-4"><?php the_field('visit_title', 'option'); ?></h2>
 

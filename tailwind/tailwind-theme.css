@@ -23,9 +23,9 @@
 	--color-card: var(--card);
 	--color-card-foreground: var(--card-foreground);
 
-	--color-primary: var(--wp--preset--color--primary);
-	--color-secondary: var(--wp--preset--color--secondary);
-	--color-tertiary: var(--wp--preset--color--tertiary);
+	--color-primary: var(--primary);
+	--color-secondary: var(--secondary);
+	--color-tertiary: var(--tertiary);
 
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
@@ -67,6 +67,8 @@
 		--card: hsl(0, 0%, 100%);
 		--card-foreground: hsl(224, 72%, 5%);
 		--border: hsl(210, 16%, 87%);
+		--primary: hsl(177, 30%, 26%);
+		--secondary: hsl(174, 25%, 47%);
 	}
 
 	.dark {
@@ -75,5 +77,6 @@
 		--card: hsl(286, 4%, 16%);
 		--card-foreground: hsl(210, 20%, 98%);
 		--border: hsl(210, 16%, 25%);
+		--primary: hsl(174, 25%, 47%);
 	}
 }

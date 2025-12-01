@@ -68,6 +68,14 @@
 	@apply float-right ml-8;
 }
 
+.entry-content p {
+	@apply mb-6 leading-10;
+}
+
+.entry-content a {
+	@apply text-primary hover:text-secondary transition-all duration-300;
+}
+
 /* Container */
 .container {
 	@apply mx-auto px-4 md:px-8;
@@ -320,4 +328,8 @@
 }
 .inner-page-banner figure img {
 	@apply w-full;
+}
+
+.scripture-ref {
+	@apply mb-12 px-12 py-6 !text-2xl font-light;
 }

@@ -41,7 +41,8 @@
                             if ($link2 && isset($link2['url'])): ?>
                                 <a href="<?php echo esc_url($link2['url']); ?>"
                                     target="<?php echo esc_attr($link2['target'] ?? '_self'); ?>"
-                                    class="text-white flex items-center gap-1 bg-white/30 hover:bg-white hover:text-foreground rounded-full text-xl px-14 py-5 transition-all duration-300">
+                                    class="text-white flex items-center gap-1 bg-white/30 hover:bg-white hover:text-foreground rounded-full text-xl px-14 py-5 transition-all duration-300 scroll-smooth"
+                                    onclick="if(this.hash) { event.preventDefault(); const el = document.querySelector(this.hash); if(el) { const offset = 100; const top = el.getBoundingClientRect().top + window.scrollY - offset; window.scrollTo({top, behavior: 'smooth'}); } }">
                                     <?php echo esc_html($link2['title']); ?>
                                 </a>
                             <?php endif; ?>

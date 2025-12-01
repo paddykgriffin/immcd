@@ -12,21 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-
-<div class="inner-page-banner grid">
-
-	<header class="entry-header text-center col-start-1 row-start-1 flex pt-15 items-start z-20 relative">
-		<?php
-		if ( ! is_front_page() ) {
-			the_title( '<h1 class="entry-title text-5xl">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		}
-		?>
-	</header><!-- .entry-header -->
-
-	<?php immanuel_church_dublin_post_thumbnail(''); ?>
-</div>
+<?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
 
 	<section <?php immanuel_church_dublin_content_class( 'entry-content lg:py-24' ); ?>>
 		<?php

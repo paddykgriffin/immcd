@@ -16,7 +16,7 @@ get_header();
 
 	<section id="primary">
 		<main id="main">
-
+sssss
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -32,6 +32,8 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
+
+			<?php get_template_part( 'template-parts/custom/custom', 'our-people' ); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
