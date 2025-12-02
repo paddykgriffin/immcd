@@ -5,7 +5,7 @@
       <div class="max text-center pb-8">
 
        <p class="mb-4 dark:text-white"><?php the_field('visit_description', 'option'); ?></p>
-      <p class="mb-4 dark:text-white"> <?php the_field('visit_address', 'option'); ?></p>
+      <p class="mb-4 dark:text-white"> <?php the_field('church_address', 'option'); ?></p>
       </div>
     
       <!-- Temp - Migrate to Google Cloud API -->

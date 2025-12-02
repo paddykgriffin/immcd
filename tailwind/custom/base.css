@@ -9,6 +9,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* body {
+	@apply font-display;
+} */
+
 h2,
 h3,
 h4,

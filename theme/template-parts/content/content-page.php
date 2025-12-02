@@ -13,8 +13,9 @@
 
 
 <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
+ <!-- Inner Page Hero/Featured Image -->
 
-	<section <?php immanuel_church_dublin_content_class( 'entry-content lg:py-24' ); ?>>
+	<section <?php immanuel_church_dublin_content_class( 'entry-content lg:py-16' ); ?>>
 		<?php
 		the_content();
 
@@ -28,7 +29,7 @@
 	</section><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		
 			<?php
 			edit_post_link(
 				sprintf(
@@ -45,7 +46,9 @@
 				)
 			);
 			?>
-		</footer><!-- .entry-footer -->
+		
 	<?php endif; ?>
+
+	
 
 </article><!-- #post-<?php the_ID(); ?> -->

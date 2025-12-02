@@ -94,6 +94,10 @@
 	@apply border-primary text-primary hover:bg-secondary dark:hover:text-primary inline-flex items-center justify-between rounded-full border-1 py-2 pr-3 pl-6 text-xl font-light transition-all duration-300 hover:text-white dark:border-white dark:text-white dark:hover:bg-white;
 }
 
+.btn-outline-white {
+	@apply hover:text-primary inline-flex items-center justify-between rounded-full border-1 border-white py-2 pr-3 pl-6 text-white hover:bg-white;
+}
+
 .btn-outline svg {
 	@apply dark:text-white;
 }
@@ -332,4 +336,16 @@
 
 .scripture-ref {
 	@apply mb-12 px-12 py-6 !text-2xl font-light;
+}
+
+/* Hide Header Text Connect Page */
+
+.post-3409 header h1 {
+	@apply hidden;
+}
+
+/* Contact Form */
+
+.wp-block-contact-form-7-contact-form-selector {
+	@apply bg-red-500;
 }

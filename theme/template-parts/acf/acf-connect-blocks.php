@@ -1,40 +1,11 @@
 <?php
-
-/**
- * Template Name: Connect
- *
- * @package _bless
- */
-
-get_header();
+if ( is_page( 'connect' ) ): // page slug
 ?>
 
-<section id="primary">
-		<main id="main">
-	
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<section <?php immanuel_church_dublin_content_class( ' ' ); ?>>
 
-
-<div class="inner-page-banner grid">
-
-	<header class="hidden entry-header text-center col-start-1 row-start-1  pt-15 items-end z-20 relative">
-		<?php
-		if ( ! is_front_page() ) {
-			the_title( '<h1 class="entry-title text-5xl text-white text-shadow-sm">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		}
-		?>
-	</header><!-- .entry-header -->
-
-	<?php immanuel_church_dublin_post_thumbnail(''); ?>
-</div>
-
-
-	<section <?php immanuel_church_dublin_content_class( ' md:py-24 min-h-[50vh] dark:bg-stone-950' ); ?>>
-
-    	<!-- <?php
+    	<?php /*
 		the_content();
 
 		wp_link_pages(
@@ -43,12 +14,12 @@ get_header();
 				'after'  => '</div>',
 			)
 		);
-		?> -->
+		*/?> 
 
 
     <div class="container">
 
-         <!-- Buttons Loop -->
+        
                 <?php if ( have_rows( 'connect_block' ) ): ?>
                     <?php while ( have_rows( 'connect_block' ) ): the_row(); ?>
 
@@ -145,12 +116,7 @@ get_header();
 		
 	</section><!-- .entry-content -->
 
-	
-
-</article><!-- #post-<?php the_ID(); ?> -->
-
-</main><!-- #main -->
-	</section><!-- #primary -->
 
 <?php
-get_footer();
+endif;
+?>

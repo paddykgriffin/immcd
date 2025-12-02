@@ -301,3 +301,9 @@ function add_primary_menu_link($atts, $item, $args, $depth)
 }
 add_filter('nav_menu_link_attributes', 'add_primary_menu_link', 10, 4);
 
+/**
+ * Function - Tile/Square Images
+ */
+add_image_size('tile-sm', 200, 200, true);
+add_image_size('tile-md', 400, 400, true);
+add_image_size('tile-lg', 800, 800, true);

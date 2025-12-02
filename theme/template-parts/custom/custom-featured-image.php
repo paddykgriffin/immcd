@@ -1,4 +1,4 @@
-<div class="inner-page-banner grid">
+<section class="inner-page-banner grid">
 
 	<header class="entry-header text-center col-start-1 row-start-1 flex pb-15 items-end z-20 relative">
 		<?php
@@ -11,4 +11,4 @@
 	</header><!-- .entry-header -->
 
 	<?php immanuel_church_dublin_post_thumbnail(''); ?>
-</div>
+</section>

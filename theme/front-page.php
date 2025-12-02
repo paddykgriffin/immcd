@@ -14,8 +14,9 @@
 
 get_header();
 ?>
+<main id="main">
 
-<?php get_template_part('template-parts/custom/custom', 'hero'); ?>
+<?php get_template_part('template-parts/acf/acf', 'hero'); ?>
 <!-- #hero -->
 
 
@@ -41,7 +42,8 @@ get_header();
 
 
 
-
+</main>
+<!-- #main -->
 
 <?php
 get_footer();

@@ -15,7 +15,7 @@
 
     <div class="col-start-1 row-start-1 flex items-center z-20 ">
         <div class="container">
-            <div class="grid content-center text-center pt-20">
+            <div class="grid content-center text-center ">
                 <!-- Title -->
                 <h1 class="text-7xl font-semibold text-white">
                     <?php the_field('hero_title', 'option'); ?>

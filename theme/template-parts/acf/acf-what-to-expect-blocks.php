@@ -1,19 +1,10 @@
 <?php
-
-/**
- * Template Name: What to Expect
- *
- * @package _bless
- */
-
-get_header();
+if ( is_page( 'what-to-expect' ) ): // page slug
 ?>
 
-<main id="main">
 
-<?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
 
-<div <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
     <div class="container">
         <div class="grid grid-cols-12 gap-16 items-center">
             <div class="col-span-7">
@@ -44,10 +35,10 @@ get_header();
             </div>
         </div>
    </div>
-</div>
+</section>
 
 
-<div <?php immanuel_church_dublin_content_class( ' md:py-24 bg-gray-100 dark:bg-black' ); ?>>
+<section <?php immanuel_church_dublin_content_class( ' md:py-24 bg-gray-100 dark:bg-black' ); ?>>
    <div class="container text-center">
 
 
@@ -95,10 +86,10 @@ get_header();
 
 
    </div>
-</div>
+</section>
 
 
-<div <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
     <div class="container">
         <div class="grid grid-cols-12 gap-16 items-center">
             <div class="col-span-7">
@@ -129,10 +120,9 @@ get_header();
             </div>
         </div>
    </div>
-</div>
-
-	</main><!-- #main -->
+</section>
 
 
 <?php
-get_footer();
+endif;
+?>
