@@ -1,31 +1,5 @@
 import './theme-toggle.js';
 
-// Dark Mode Toggle
-// NOTE: legacy button-based toggle logic remains below for backward compatibility.
-// The new module `theme-toggle.js` handles the checkbox-based toggle used in the header.
-// document.addEventListener("DOMContentLoaded", function() {
-//     const toggleButtons = document.querySelectorAll(".darkModeToggle");
-//     const rootElement = document.documentElement; 
-
-//     // Check localStorage for dark mode preference
-//     if (localStorage.getItem("theme") === "dark") {
-//         rootElement.classList.add("dark");
-//     } else {
-//         rootElement.classList.remove("dark"); // Ensure light mode is applied
-//     }
-
-//     toggleButtons.forEach(button => {
-//         button.addEventListener("click", function() {
-//             if (rootElement.classList.contains("dark")) {
-//                 rootElement.classList.remove("dark");
-//                 localStorage.setItem("theme", "light");
-//             } else {
-//                 rootElement.classList.add("dark");
-//                 localStorage.setItem("theme", "dark");
-//             }
-//         });
-//     });
-// });
 
  // Sidebar Toggle
  function openNav() {
@@ -70,5 +44,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (header && siteMain) {
         siteMain.style.marginTop = `${header.offsetHeight}px`
     }
+});
 
+// Accordion (Contact Page)
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtns = document.querySelectorAll('.imml-accordion .accordion-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      this.classList.toggle('active'); // Toggle class on button
+      const nextDiv = this.nextElementSibling;
+      if (nextDiv && nextDiv.tagName === 'DIV') {
+        nextDiv.classList.toggle('active');
+      }
+    });
+  });
+});
+
+
+// Toggle (submenus)
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButtons = document.querySelectorAll('.submenu-toggle');
+
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Find the next sibling submenu
+      const submenu = button.nextElementSibling;
+
+      if (submenu && submenu.classList.contains('sub-menu')) {
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isOpen);
+        submenu.classList.toggle('open', !isOpen);
+
+        // Optional: change the icon (add/remove)
+        const icon = button.querySelector('.material-symbols-outlined');
+        if (icon) icon.textContent = isOpen ? 'add' : 'remove';
+      }
+    });
+  });
 });

@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.5' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.7' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {

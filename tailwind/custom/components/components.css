@@ -345,7 +345,67 @@
 }
 
 /* Contact Form */
-
 .wp-block-contact-form-7-contact-form-selector {
-	@apply bg-red-500;
+	@apply mx-auto mt-20 max-w-2xl border-1 border-gray-100 px-6 py-6 text-center shadow-md md:px-20 md:py-10 dark:border-stone-800;
+}
+.wp-block-contact-form-7-contact-form-selector .section-title {
+	@apply after:bg-primary text-primary;
+}
+.wp-block-contact-form-7-contact-form-selector .section-title p {
+	@apply mt-10 mb-0;
+}
+
+.wp-block-contact-form-7-contact-form-selector .form-subtitle {
+	@apply text-primary mb-12 font-serif !text-3xl;
+}
+
+.wp-block-contact-form-7-contact-form-selector .form-row {
+	@apply my-4;
+}
+
+.wpcf7-form {
+	@apply mx-auto;
+}
+
+.wp-block-contact-form-7-contact-form-selector input[type="text"] {
+	@apply w-full border border-gray-200 bg-gray-100 p-3 px-3 text-white placeholder:text-gray-800;
+}
+
+.wp-block-contact-form-7-contact-form-selector input[type="email"] {
+	@apply w-full border border-gray-200 bg-gray-100 p-3 px-3 text-gray-800 placeholder:text-gray-800;
+}
+
+.wp-block-contact-form-7-contact-form-selector select {
+	@apply w-full border border-gray-200 bg-gray-100 p-3 px-3 text-gray-800;
+}
+
+.wp-block-contact-form-7-contact-form-selector textarea {
+	@apply w-full border border-gray-200 bg-gray-100 p-3 px-3 text-gray-800 placeholder:text-gray-800;
+}
+
+.wp-block-contact-form-7-contact-form-selector input[type="submit"] {
+	@apply hover:bg-secondary bg-primary w-full rounded-full px-12 py-3 text-center font-serif text-2xl tracking-wide text-white no-underline transition-all duration-300 hover:cursor-default md:ml-20 md:w-1/2;
+}
+
+.wpcf7-not-valid-tip {
+	@apply mt-2 bg-red-500 text-white;
+}
+
+.location-content.active {
+	@apply block;
+}
+
+.imml-accordion .accordion-btn.active span {
+	@apply rotate-180;
+}
+
+/* Search Box */
+.search-form {
+	@apply mb-16 flex items-center justify-between rounded-full border-1 border-solid border-gray-400 bg-transparent px-6 text-black md:mb-24;
+}
+.search-form input {
+	@apply rounded-full border-0 bg-transparent py-3 text-black outline-none;
+}
+.search-form button {
+	@apply block h-[24px];
 }

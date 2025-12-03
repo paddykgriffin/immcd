@@ -7,7 +7,9 @@
        <p class="mb-4 dark:text-white"><?php the_field('visit_description', 'option'); ?></p>
       <p class="mb-4 dark:text-white"> <?php the_field('church_address', 'option'); ?></p>
       </div>
-    
+
+
+       <?php the_field('church_map', 'option'); ?>
       <!-- Temp - Migrate to Google Cloud API -->
        <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d595.441498169079!2d-6.2603315!3d53.347445!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x776cbda2ca1cc454!2sImmanuel+Church+Dublin!5e0!3m2!1sen!2sie!4v1431350198250" width="100%" height="450" frameborder="0"></iframe>
 
