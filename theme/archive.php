@@ -10,15 +10,20 @@
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
 
+		<main id="main">
+			<section id="archive-posts" class="posts py-8 lg:py-16">
+
+<div class="container mx-auto px-8 py-8">
+
+<div class="grid grid-cols-12 gap-8">
+			<div class="col-span-8">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</header><!-- .page-header -->
-
+	<div class="posts-wrapper grid gap-8">
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) :
@@ -38,8 +43,17 @@ get_header();
 
 		endif;
 		?>
+		</div>
+		</div>
+		<?php if (is_active_sidebar('posts-sidebar')) : ?>
+				<aside class="md:col-start-9 xl:col-start-10 md:col-span-4 xl:col-span-3 pt-8 posts-sidebar" role="complementary" aria-label="<?php esc_attr_e('Footer', '_tw'); ?>">
+					<?php dynamic_sidebar('posts-sidebar'); ?>
+				</aside>
+			<?php endif; ?>
+		</div>
+		</div>
+		</section><!-- #primary -->
 		</main><!-- #main -->
-	</section><!-- #primary -->
 
 <?php
 get_footer();

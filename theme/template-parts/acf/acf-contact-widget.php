@@ -12,19 +12,19 @@
         
             <div class="grid md:grid-cols-12 items-center">
                 <div class="col-span-6">
-                    <div class="bg-gray-200 text-center  py-6 md:py-25 ">
+                    <div class="bg-gray-200 dark:bg-stone-800 text-center  py-6 md:py-25 ">
                         <?php
                         if ( function_exists( 'get_field' ) ) {
                             $image = get_field( 'contact_widget_logo' );
                             if ( ! empty( $image ) ) {
-                                echo '<img class="mx-auto w-[200px]" src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
+                                echo '<img class="mx-auto w-[200px] md:w-[200px]" src="' . esc_url( $image['url'] ) . '" alt="' . esc_attr( $image['alt'] ) . '" />';
                             } else {
                                 $default_logo = get_template_directory_uri() . '/img/logo.png';
-                                echo '<img class="mx-auto w-[200px]" src="' . esc_url( $default_logo ) . '" alt="Default Logo" />';
+                                echo '<img class="mx-auto w-[100px] md:w-[200px]" src="' . esc_url( $default_logo ) . '" alt="Default Logo" />';
                             }
                         } else {
                             $default_logo = get_template_directory_uri() . '/img/logo.png';
-                            echo '<img class="mx-auto w-[200px]" src="' . esc_url( $default_logo ) . '" alt="Default Logo" />';
+                            echo '<img class="mx-auto w-[200px] md:w-[200px]" src="' . esc_url( $default_logo ) . '" alt="Default Logo" />';
                         }
                         ?>
                     </div>
@@ -39,7 +39,7 @@
                             if ( ! empty( $title ) ) {
                                 echo '<h3 class="text-white mb-0">' . esc_html( $title ) . '</h3>';
                             } else {
-                                echo '<h3 class="text-white  mb-0"">Contact Us</h3>';
+                                echo '<h3 class="text-white mb-0"">Contact Us</h3>';
                             }
                         } else {
                             echo '<h3>Example Title</h3>';

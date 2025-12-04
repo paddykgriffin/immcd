@@ -15,39 +15,76 @@
 get_header();
 ?>
 
-	<section id="primary">
+	
 		<main id="main">
-qqqq
-		<?php
-		if ( have_posts() ) {
 
-			if ( is_home() && ! is_front_page() ) :
+
+		<section class="inner-page-banner grid bg-black">
+
+	<header class="entry-header text-center col-start-1 row-start-1 flex pb-15 items-end z-20 relative">
+			<?php single_post_title( '<h1 class="entry-title lg:pt-15 mb-0 text-5xl text-white text-shadow-md">', '</h1>' ); ?>
+			
+	</header><!-- .entry-header -->
+
+</section>
+
+
+
+<section id="posts" class="md:py-20">
+		<div class="container">
+			<div class="grid md:grid-cols-12 md:gap-16 xl:gap-0">
+				<div class="md:col-span-8 xl:col-span-8 posts-content">
+
+					<?php
+				if (have_posts()) {
+
+					if (is_home() && ! is_front_page()) :
 				?>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php single_post_title(); ?></h1>
-				</header><!-- .entry-header -->
-				<?php
-			endif;
+						<header class="entry-header pb-8 hidden">
+							<h1 class="entry-title"><?php single_post_title(); ?></h1>
+						</header><!-- .entry-header -->
 
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/content' );
-			}
 
-			// Previous/next page navigation.
-			immanuel_church_dublin_the_posts_navigation();
+						<?php echo get_search_form(); ?>
+						<div class="posts-wrapper grid gap-8 lg:grid-cols-2 2xl:grid-cols-1 pb-16">
+					<?php
+					endif;
 
-		} else {
+					// Load posts loop.
+					while (have_posts()) {
+						the_post();
+						get_template_part('template-parts/content/content');
+					}
 
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
+					
+				} else {
 
-		}
-		?>
+					// If no content, include the "No posts found" template.
+					get_template_part('template-parts/content/content', 'none');
+				}
+					?>
+						</div>
+
+						<?php immanuel_church_dublin_the_posts_navigation(); ?>
+
+
+
+
+
+			</div>
+			<?php if (is_active_sidebar('posts-sidebar')) : ?>
+				<aside class="md:col-start-9 xl:col-start-10 md:col-span-4 xl:col-span-3 pt-8 posts-sidebar" role="complementary" aria-label="<?php esc_attr_e('Footer', '_tw'); ?>">
+					<?php echo get_search_form(); ?>
+					<?php dynamic_sidebar('posts-sidebar'); ?>
+				</aside>
+			<?php endif; ?>
+				
+			</div>
+		</div>
+	</section><!-- #posts-wrapper -->
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	
 
 <?php
 get_footer();

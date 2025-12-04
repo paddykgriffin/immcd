@@ -1,6 +1,6 @@
-<section class="bg-gray-100 dark:bg-black py-6 md:py-18 home-sermons">  
+<section class="bg-gray-100 dark:bg-black py-12 md:py-18 home-sermons">  
 
-<h2 class="text-center pb-8 text-foreground">Latest Sermon</h2>
+<h2 class="text-center pb-8 text-foreground entry-title">Latest Sermon</h2>
 
 
     <?php echo do_shortcode('[seriesengine_wo enmse_hsh=1 enmse_pag=10 enmse_apag=12]'); ?>

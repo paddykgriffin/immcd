@@ -12,22 +12,24 @@ if ( ! function_exists( 'immanuel_church_dublin_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function immanuel_church_dublin_posted_on() {
-		$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_format = 'j F'; // "j" = Day (without leading zero), "F" = Full month name
+
+		$time_string = '<time datetime="%1$s">%2$s</time>';
+		if (get_the_time('U') !== get_the_modified_time('U')) {
+			$time_string = '<time datetime="%1$s">%2$s</time>';
 		}
 
 		$time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_attr(get_the_date(DATE_W3C)),
+			esc_html(get_the_date($time_format)),
+			esc_attr(get_the_modified_date(DATE_W3C)),
+			esc_html(get_the_modified_date())
 		);
 
 		printf(
-			'<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
+			'<div class="date"><a href="%1$s" rel="bookmark">%2$s</a></div>',
+			esc_url(get_permalink()),
 			$time_string // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
@@ -48,6 +50,77 @@ if ( ! function_exists( 'immanuel_church_dublin_posted_by' ) ) :
 	}
 endif;
 
+if (!function_exists('immanuel_church_dublin_categories')):
+
+	function immanuel_church_dublin_categories()
+	{
+		$categories = get_the_category();
+		$separator = '  ';
+		$output = '';
+
+		if (!empty($categories)) {
+			$output .= '<div class="category flex gap-2"><span class="sr-only">' . esc_html__('Posted in', 'immanuel_church_dublin') . '</span>';
+
+			$category_links = [];
+
+			foreach ($categories as $category) {
+				$category_links[] = '<a class="category-link default-transition" href="' . esc_url(get_category_link($category->term_id)) . '">
+					<span class="material-symbols-outlined text-[10px] text-(--no1-red) mr-2">inbox_text</span>' . esc_html($category->name) . '</a>';
+			}
+
+			$output .= implode($separator, $category_links);
+			$output .= '</div>';
+
+			echo $output;
+		}
+	}
+endif;
+
+
+if (!function_exists('immanuel_church_dublin_tags')):
+
+	function immanuel_church_dublin_tags()
+	{
+		/* translators: used between list items, there is a space after the comma. */
+		$tags_list = get_the_tag_list('', __(', ', 'immanuel_church_dublin'));
+		if ($tags_list) {
+			printf(
+				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
+				'<div class="tag"><span class="sr-only">%1$s</span>',
+				esc_html__('Tags:', 'immanuel_church_dublin'),
+				$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			);
+		}
+
+		$tags = get_the_tags();
+		$separator = ', ';
+		$output = '';
+
+		if ($tags) {
+			foreach ($tags as $tag) {
+				$output .= '<a class="tag-link default-transition" href="' . get_tag_link($tag->term_id) . '">
+						<span class="material-symbols-outlined text-[10px] text-(--no1-green) mr-2">bookmark</span>' . $tag->name . '</a></div>' . $separator;
+			}
+			echo trim($output, $separator);
+		}
+	}
+endif;
+
+if (!function_exists('immanuel_church_dublin_permalink')):
+	/**
+	 * Prints HTML with meta information about theme author.
+	 */
+	function immanuel_church_dublin_permalink()
+	{
+		printf(
+			'<div class="read-more"><a href="%1$s" class="btn text-white default-transition">%2$s<span class="material-symbols-outlined !text-[24px] ml-1">%3$s</span></a></div>',
+			esc_url(get_permalink()),
+			esc_html__('Read More', 'immanuel_church_dublin'),
+			'arrow_forward'
+		);
+	}
+endif;
+
 if ( ! function_exists( 'immanuel_church_dublin_comment_count' ) ) :
 	/**
 	 * Prints HTML with the comment count for the current post.
@@ -55,61 +128,50 @@ if ( ! function_exists( 'immanuel_church_dublin_comment_count' ) ) :
 	function immanuel_church_dublin_comment_count() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			/* translators: %s: Name of current post. Only visible to screen readers. */
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="sr-only"> on %s</span>', 'immanuel-church-dublin' ), get_the_title() ) );
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="comments-hide"><span class="sr-only"> on %s</span></span>', 'immanuel-church-dublin' ), get_the_title() ) );
 		}
 	}
 endif;
 
-if ( ! function_exists( 'immanuel_church_dublin_entry_meta' ) ) :
+if (!function_exists('immanuel_church_dublin_entry_meta')):
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 * This template tag is used in the entry header.
 	 */
-	function immanuel_church_dublin_entry_meta() {
+	function immanuel_church_dublin_entry_meta()
+	{
 
 		// Hide author, post date, category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
+		if ('post' === get_post_type()) {
 
-			// Posted by.
+			// Author
 			immanuel_church_dublin_posted_by();
 
-			// Posted on.
+			// Date
 			immanuel_church_dublin_posted_on();
 
-			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'immanuel-church-dublin' ) );
-			if ( $categories_list ) {
-				printf(
-				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'immanuel-church-dublin' ),
-					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// Category
+			immanuel_church_dublin_categories();
 
-			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'immanuel-church-dublin' ) );
-			if ( $tags_list ) {
-				printf(
-				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'immanuel-church-dublin' ),
-					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// Tags
+			immanuel_church_dublin_tags();
 		}
 
 		// Comment count.
-		if ( ! is_singular() ) {
-			immanuel_church_dublin_comment_count();
+		if (!is_singular()) {
+			?>
+			<div class="hidden">
+				<?php immanuel_church_dublin_comment_count(); ?>
+			</div>
+			<?php
 		}
 
 		// Edit post link.
 		edit_post_link(
 			sprintf(
 				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'immanuel-church-dublin' ),
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__('Edit <span class="sr-only">%s</span>', 'bcc'),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -122,55 +184,46 @@ if ( ! function_exists( 'immanuel_church_dublin_entry_meta' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'immanuel_church_dublin_entry_footer' ) ) :
+if (!function_exists('immanuel_church_dublin_entry_footer')):
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function immanuel_church_dublin_entry_footer() {
+	function immanuel_church_dublin_entry_footer()
+	{
 
 		// Hide author, post date, category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
+		if ('post' === get_post_type()) {
 
-			// Posted by.
+			// Author
 			immanuel_church_dublin_posted_by();
 
-			// Posted on.
+			// Date
 			immanuel_church_dublin_posted_on();
 
-			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'immanuel-church-dublin' ) );
-			if ( $categories_list ) {
-				printf(
-				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'immanuel-church-dublin' ),
-					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// Category
+			immanuel_church_dublin_categories();
 
-			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'immanuel-church-dublin' ) );
-			if ( $tags_list ) {
-				printf(
-				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'immanuel-church-dublin' ),
-					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// Tags
+			immanuel_church_dublin_tags();
 		}
 
 		// Comment count.
-		if ( ! is_singular() ) {
-			immanuel_church_dublin_comment_count();
+		if (!is_singular()) {
+			?>
+			<div class="comments-count hidden">
+				<?php immanuel_church_dublin_comment_count(); ?>
+			</div>
+			<?php
 		}
+
+		immanuel_church_dublin_permalink();
 
 		// Edit post link.
 		edit_post_link(
 			sprintf(
 				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'immanuel-church-dublin' ),
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__('Edit <span class="sr-only">%s</span>', 'bcc'),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -194,24 +247,50 @@ if ( ! function_exists( 'immanuel_church_dublin_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() ) :
+			// Get the featured image
+			$thumb_id = get_post_thumbnail_id();
+			if ( ! $thumb_id ) {
+				?>
+				<div>no image...</div>
+				<?php
+				return;
+			}
+
+			// Get image data and sizes
+			$image = wp_get_attachment_image_src( $thumb_id, 'full' );
+			$alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+			
+			// Size keys
+			$mobile_size = 'heroInnerMobile';
+			$desktop_size = 'full';
+
+			// Get the image object to access sizes array
+			$image_obj = wp_get_attachment_image_src( $thumb_id, $desktop_size );
+			$mobile_src = wp_get_attachment_image_src( $thumb_id, $mobile_size );
+
+			// Prepare sources
+			$mobile_src = $mobile_src ? $mobile_src[0] : '';
+			$desktop_src = $image_obj ? $image_obj[0] : '';
 			?>
 
 			<figure>
-				<?php the_post_thumbnail(); ?>
+				<picture>
+					<?php if ( $mobile_src ): ?>
+						<source media="(max-width: 767px)" srcset="<?php echo esc_url( $mobile_src ); ?>">
+					<?php endif; ?>
+					<img class=" mobile rounded-none" src="<?php echo esc_url( $desktop_src ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+				</picture>
 			</figure><!-- .post-thumbnail -->
 
-			<?php
-		else :
-			?>
+		<?php else : ?>
 
 			<figure>
 				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail( 'post-tile', array( 'class' => 'desktop rdounded-none' ) ); ?>
 				</a>
 			</figure>
 
-			<?php
-		endif; // End is_singular().
+		<?php endif; // End is_singular().
 	}
 endif;
 

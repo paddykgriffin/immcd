@@ -7,7 +7,7 @@
         $immanuel_church_dublin_blog_info = get_bloginfo('name');
         if (!empty( $immanuel_church_dublin_blog_info)):
         ?>
-            <div class="font-light text-sm text-center lg:text-left pb-8 md:pb-0 flex gap-2">
+            <div class="font-light text-sm text-center lg:text-left pb-8 md:pb-0 flex flex-col md:flex-row gap-2">
                 <span class="block lg:inline pb-2 md:pb-0"> &copy;
                     <?php echo date("Y"); ?>
                     <?php bloginfo('name'); ?> .</span>

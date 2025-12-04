@@ -15,7 +15,7 @@
 <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
  <!-- Inner Page Hero/Featured Image -->
 
-	<section <?php immanuel_church_dublin_content_class( 'entry-content lg:py-16' ); ?>>
+	<section <?php immanuel_church_dublin_content_class( 'entry-content container py-12 lg:py-16 ' ); ?>>
 		<?php
 		the_content();
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Faith Love Hope
+ * Template Name: Faith Hope Love
  *
  * @package _bless
  */
@@ -14,7 +14,7 @@ get_header();
         <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
         <!-- Inner Page Hero/Featured Image -->
 
-        <section <?php immanuel_church_dublin_content_class( 'entry-content lg:py-16 [&_p]:!text-2xl [&_p]:!leading-12 text-center' ); ?>>
+        <section <?php immanuel_church_dublin_content_class( 'entry-content container py-12 lg:py-16 text-center' ); ?>>
 
 
             <?php
@@ -30,60 +30,159 @@ get_header();
         <!-- .entry-content -->
 
 
-        <section class="md:py-24 dark:bg-stone-950 bg-gray-100">
+        <section class="pb-12 md:pt-12 md:pb-24 bg-[#2e5654] text-white">
             <div class="container">
 
-                <div class="grid grid-cols-3 text-center gap-16">
-                    <div>
-                        <h3 class="text-primary">Faith</h3>
-                Now faith is the assurance of things hoped for, the conviction of things not seen. Hebrews 11:1
+                <div class="grid md:grid-cols-3 pt-12 gap-8">
+                    <!-- Loop -->
+                    <?php if (have_rows('core_values','option')): ?>
+                        <?php while (have_rows('core_values','option')): the_row(); ?>
+                        <div>
 
-                For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast. Ephesians 2:8
-                    </div>
-                <div>
-                    <h3 class="text-primary">Hope</h3>
-                May the God of hope fill you with all joy and peace in believing, so that by the power of the Holy Spirit you may abound in hope. Romans 15:13
+                         <?php $title = get_sub_field('value_title','option');
+                                if ( $title ): ?>
+                                <p class="text-5xl font-medium text-center leading-10 font-serif py-8"><?php echo esc_html( $title ); ?></p>
+                            <?php endif; ?>
 
-                Blessed be the God and Father of our Lord Jesus Christ! According to his great mercy, he has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead. 1 Peter 1:3
+                            <!-- Image -->
+                            <?php
+                                $image = function_exists('get_sub_field') ? get_sub_field('value_image','option') : null;
+                                if ( empty( $image ) ): ?>
+                                <div>no image...</div>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ): ?>
+                                <img class="w-1/2 mx-auto" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
+                            <?php endif; ?>
 
+                           
+                            <!-- Loop -->
+                            <?php if (have_rows('value_description','option')): ?>
+                                <?php while (have_rows('value_description','option')): the_row(); ?>
+                            
+                                  <div class="text-center py-6">
+                                      <?php $title = get_sub_field('text_line_one','option');
+                                        if ( $title ): ?>
+                                        <p class="text-xl leading-8 font-serif pb-2 px-0 md:px-12"><?php echo esc_html( $title ); ?></p>
+                                    <?php endif; ?>
+
+
+                                    <?php $title = get_sub_field('text_line_one_ref','option');
+                                        if ( $title ): ?>
+                                        <p class="text-sm italic font-light"><?php echo esc_html( $title ); ?></p>
+                                    <?php endif; ?>
+
+
+
+                                    <?php $title = get_sub_field('text_line_two','option');
+                                        if ( $title ): ?>
+                                        <p class="relative before:[content-''] before:block before:h-[1px] before:w-1/3 before:absolute before:left-1/2 before:-translate-x-1/2 before:bg-white before:top-10 text-xl leading-8 font-serif pt-16 pb-2 px-0 md:px-12"><?php echo esc_html( $title ); ?></p>
+                                    <?php endif; ?>
+
+
+
+
+
+
+
+                                    <?php $title = get_sub_field('text_line_two_ref','option');
+                                        if ( $title ): ?>
+                                       <p class="text-sm italic mb-10 font-light"><?php echo esc_html( $title ); ?></p>
+                                    <?php endif; ?>
+                                  </div>
+                                
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+
+                        </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
-                <div>
-                    <h3 class="text-primary">Love</h3>
-                Anyone who does not love does not know God, because God is love. In this the love of God was made manifest among us, that God sent his only Son into the world, so that we might live through him. 
-                1 John 3:16, 1 John 4:8
-                </div>
-                    
-                </div>
 
-                <div class="bg-secondary text-center text-white mx-auto max-w-2xl mt-10 p-8 shadow-lg">
-                    <p class="italic scripture-ref p-0 mb-0 !text-4xl">"So now faith, hope, and love abide, these three; but the greatest of these is love."</p>
-                <p class="italic pt-4">1 Corinthians 13:13</p>
+                <div class="bg-[#5a9690]  text-center text-white mx-auto max-w-7xl mt-10 py-6 shadow-lg">
+                    <p class="italic scripture-ref p-0 mb-0 !text-4xl">"<?php the_field('core_value_scripture_text', 'option')?>"</p>
+                    <p class="italic font-serif pt-4"><?php the_field('core_value_scripture_reference', 'option')?></p>
                 </div>
             </div>
         </section>
         <!-- Section: Faith Hope Love -->
 
-        <section class="md:py-24 dark:bg-stone-950">
+        <section class="py-12 md:py-24  dark:bg-stone-950">
             <div class="container">
-                <h2 class="text-center">More about our convictions</h2>
-                <p> We believe that God the Father speaks in the Bible through His Spirit about His Son, Jesus Christ.</p>
-                <p> We believe that the Bible is God's perfect, authoritative word. In the Bible, God tells us His plan for the world from creation through to the promised new creation. That story is all about Jesus, God’s promised rescuing King, who became one of us, died for our sins and rose again to be enthroned in heaven as Lord of all.</p>
-                <p>We are a wayward people, but by God's love and grace in Jesus, we have been forgiven and adopted into His family, as His children, and called by Him to enjoy, declare and live for His glory.</p>
-                <p>We believe that the Lord Jesus Christ died on the Cross in our place to grant us complete forgiveness of sin and to bring us to God.</p>
-                <p> We believe that this Good News is at the heart of the Bible which is the sufficient, final and supreme authority in all matters to do with doctrine and life.</p>
+                <?php $field_object = get_field_object('convictions', 'option');
+                if (!empty($field_object['label'])): ?>
+                    <h2 class="entry-title text-primary text-center pb-10">
+                        <?php echo esc_html($field_object['label']); ?>
+                    </h2>
+                <?php endif; ?>
+                <div class="grid  lg:grid-cols-3 gap-6 md:gap-12 justify-center">
+                    <?php 
+                    $convictions = get_field('convictions', 'option');
+                    $conviction_count = count($convictions);
+                    $cols = 3;
+                    $remainder = $conviction_count % $cols;
+                    $row_counter = 0;
+                    
+                    while (have_rows('convictions', 'option')): the_row(); 
+                        if ($row_counter === $conviction_count - $remainder && $remainder > 0 && $row_counter % $cols === 0): ?>
+                            <div class=" lg:col-span-3 flex flex-col md:flex-row justify-center gap-6 md:gap-12">
+                        <?php endif; ?>
+                        <?php if (!empty(get_sub_field('convictions_text'))): ?>
+                            <div class="grid text-left bg-gray-50 dark:bg-card p-6 border-l-6 border-primary dark:border-primary/70 w-full shadow-md">
+                               <div class="entry-content">
+                                 <p class="!mb-0 !pb-0 place-content-center text-gray-800 dark:text-gray-100">
+                                    <?php the_sub_field('convictions_text'); ?>
+                                </p>
+                               </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php 
+                        $row_counter++;
+                        if ($row_counter === $conviction_count && $remainder > 0): ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
             </div>
         </section>
         <!-- Section: Convictions -->
 
-        <section class="md:py-24 dark:bg-stone-950 bg-gray-100">
-            <div class="container">
-                <h2 class="text-center">Some of our distinctives</h2>
-                <p>We are a member church of the Anglican Convocation in Europe.</p>
-                <p>We uphold the Jerusalem Statement 2008, the 39 Articles of Religion and the 1662 Book of Common Prayer. </p>
-                <p>Locally we are part of Irish Church Missions which was established in 1849 to make Jesus known in Ireland. Immanuel was first called the ‘Mission Church’ when established by ICM in 1853.
-                </p>
-                <p>As a seasoned church planting church we are active in the Dublin Collective. The Collective is a multi denominational peer learning community of church planting leaders. We work together for the good of the city and the growth of the church. The Collective is part of the wider movement known as City to City Europe.   </div>
-                </p>
+        <section class="py-12 md:pb-24 dark:bg-stone-950 bg-white">
+            <div class="container ">
+                <?php $field_object = get_field_object('distinctives', 'option');
+                if (!empty($field_object['label'])): ?>
+                    <h2 class="entry-title text-primary text-center pt-15 pb-10">
+                        <?php echo esc_html($field_object['label']); ?>
+                    </h2>
+                <?php endif; ?>
+                <div class="grid lg:grid-cols-3 gap-6 md:gap-12">
+                    <?php 
+                    $distinctives = get_field('distinctives', 'option');
+                    $distinctive_count = count($distinctives);
+                    $cols = 3;
+                    $remainder = $distinctive_count % $cols;
+                    $row_counter = 0;
+                    
+                    while (have_rows('distinctives', 'option')): the_row(); 
+                        if ($row_counter === $distinctive_count - $remainder && $remainder > 0 && $row_counter % $cols === 0): ?>
+                            <div class="lg:col-span-3 flex flex-col md:flex-row justify-center gap-6 md:gap-12">
+                        <?php endif; ?>
+                        <?php if (!empty(get_sub_field('distinctives_text'))): ?>
+                            <div class="flex items-center justify-center text-center bg-card p-6 shadow-lg  w-full">
+                               <div class="entry-content">
+                                 <p class="!mb-0 !pb-0 place-content-center text-foreground">
+                                    <?php the_sub_field('distinctives_text'); ?>
+                                </p>
+                               </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php 
+                        $row_counter++;
+                        if ($row_counter === $distinctive_count && $remainder > 0): ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </div>
+            </div>
         </section>
         <!-- Section: Distinctives -->
 

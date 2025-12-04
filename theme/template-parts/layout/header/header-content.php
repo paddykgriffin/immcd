@@ -15,7 +15,7 @@
 
 		<div class="grid grid-cols-2 lg:grid-cols-12 gap-6 md:gap-6 justify-between">
 
-			<div class="col-span-10 flex gap-6 items-center">
+			<div class="lg:col-span-10 flex gap-6 items-center">
 				<?php
 				if ( is_front_page() ) :
 					?>
@@ -47,7 +47,7 @@
 						'theme_location' => 'menu-1',
 									'container' => false,
 									'menu_id' => 'primary-menu', 
-									'menu_class' => ' gap-12 lg:gap-8 xl:gap-12 hidden md:flex',
+									'menu_class' => ' gap-12 lg:gap-8 xl:gap-12 hidden lg:flex',
 									'items_wrap' => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
 					)
 				);
@@ -55,9 +55,17 @@
 			</nav><!-- #site-navigation -->
 			</div>
 
-			<div class="col-span-2 grid items-center">
+			<div class="lg:col-span-2 grid items-center">
 				<div class="flex justify-end">
-					<?php get_template_part('template-parts/layout/header/header', 'mode'); ?>
+					<div class="hidden lg:block">
+						<?php get_template_part('template-parts/layout/header/header', 'mode'); ?>
+					</div>
+					<button id="menuBtn" class="lg:hidden text-black dark:text-white" aria-controls="primary-menu"
+						aria-expanded="false">
+						<span class="material-symbols-outlined !block !text-[40px]">menu</span>
+						<p class="sr-only"> <?php esc_html_e('Primary Menu', '_bless'); ?>
+						</p>
+					</button>
 				</div>
 			</div>
 		</div> <!-- .grid -->

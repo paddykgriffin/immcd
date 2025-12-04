@@ -1,7 +1,8 @@
 (function(){
     function initThemeToggle(){
-        var toggle = document.getElementById('darkModeToggle');
-        if(!toggle) return;
+        // Select ALL theme toggle inputs using class selector (supports multiple instances)
+        var toggles = document.querySelectorAll('input.darkModeToggle');
+        if(!toggles.length) return;
 
         function applyTheme(theme){
             if(theme === 'dark') document.documentElement.classList.add('dark');
@@ -18,11 +19,6 @@
             applyTheme(prefersDark ? 'dark' : 'light');
         }
 
-        // Ensure the checkbox reflects the actual document theme (thumb left = light, right = dark)
-        try {
-            toggle.checked = document.documentElement.classList.contains('dark');
-        } catch (e) { /* ignore */ }
-
         // Helper: update thumb transform to match checked state
         function updateThumbState(t){
             try {
@@ -36,14 +32,22 @@
             } catch (e) { /* ignore */ }
         }
 
-        // Initialize thumb position
-        updateThumbState(toggle);
+        // Initialize all toggle instances
+        toggles.forEach(function(toggle){
+            // Ensure the checkbox reflects the actual document theme (thumb left = light, right = dark)
+            try {
+                toggle.checked = document.documentElement.classList.contains('dark');
+            } catch (e) { /* ignore */ }
 
-        toggle.addEventListener('change', function(){
-            var theme = this.checked ? 'dark' : 'light';
-            applyTheme(theme);
-            try { localStorage.setItem('theme', theme); } catch(e) { /* ignore */ }
-            updateThumbState(this);
+            // Initialize thumb position
+            updateThumbState(toggle);
+
+            toggle.addEventListener('change', function(){
+                var theme = this.checked ? 'dark' : 'light';
+                applyTheme(theme);
+                try { localStorage.setItem('theme', theme); } catch(e) { /* ignore */ }
+                updateThumbState(this);
+            });
         });
     }
 

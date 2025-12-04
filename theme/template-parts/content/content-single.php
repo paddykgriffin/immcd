@@ -22,8 +22,8 @@
 	</header><!-- .entry-header -->
 
 	<?php immanuel_church_dublin_post_thumbnail(); ?>
-
-	<div <?php immanuel_church_dublin_content_class( 'entry-content' ); ?>>
+	
+	<div <?php immanuel_church_dublin_content_class( 'entry-content pt-10' ); ?>>
 		<?php
 		the_content(
 			sprintf(

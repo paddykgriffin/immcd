@@ -4,12 +4,12 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 
 
 
-<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<section <?php immanuel_church_dublin_content_class( 'py-12 md:py-24' ); ?>>
     <div class="container">
-        <div class="grid grid-cols-12 gap-16 items-center">
-            <div class="col-span-7">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7">
                 <h2 class="entry-title text-primary"> <?php the_field('two_col_block_sundays_title'); ?></h2>
-                <div class="[&_p]:mb-6">
+                <div class="entry-content">
                     <?php the_field('two_col_block_sundays_desc'); ?>
                 </div>
                 <?php 
@@ -23,7 +23,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
                     </a>
                 <?php endif; ?>
             </div>
-            <div class="col-span-5">
+            <div class="md:col-span-5">
                 <?php
                     $image = function_exists('get_field') ? get_field('two_col_block_sundays_image') : null;
                     $size = 'full'; // (thumbnail, medium, large, full or custom size
@@ -38,16 +38,16 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 </section>
 
 
-<section <?php immanuel_church_dublin_content_class( ' md:py-24 bg-gray-100 dark:bg-black' ); ?>>
+<section <?php immanuel_church_dublin_content_class( 'py-12 md:py-24 bg-gray-100 dark:bg-black' ); ?>>
    <div class="container text-center">
 
 
-    <h2 class="entry-title text-primary mb-0"> <?php the_field('what_belive_title'); ?></h2>
-    <div class="max-w-[900px] mx-auto text-xl leading-10">
-        <?php the_field('what_believe_description'); ?>
+    <h2 class="entry-title text-center text-primary mb-0"> <?php the_field('what_belive_title'); ?></h2>
+    <div class="max-w-[900px] mx-auto entry-content">
+        <p><?php the_field('what_believe_description'); ?></p>
     </div>
 
-            <div class="grid grid-cols-3 py-12 gap-8">
+            <div class="grid md:grid-cols-3 py-12 gap-8">
                 <!-- Loop -->
                 <?php if (have_rows('our_beliefs')): ?>
                     <?php while (have_rows('our_beliefs')): the_row(); ?>
@@ -64,7 +64,9 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 
                         <?php $title = get_sub_field('belief_description');
                             if ( $title ): ?>
-                            <p class="text-xl leading-10 font-normal py-8"><?php echo esc_html( $title ); ?></p>
+                            <div class="entry-content">
+                                <p class="font-normal py-8"><?php echo esc_html( $title ); ?></p>
+                            </div>
                         <?php endif; ?>
                     </div>
                     <?php endwhile; ?>
@@ -89,12 +91,12 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 </section>
 
 
-<section <?php immanuel_church_dublin_content_class( 'md:py-24' ); ?>>
+<section <?php immanuel_church_dublin_content_class( 'py-12 md:py-24' ); ?>>
     <div class="container">
-        <div class="grid grid-cols-12 gap-16 items-center">
-            <div class="col-span-7">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7">
                 <h2 class="entry-title text-primary"> <?php the_field('two_col_block_people_title'); ?></h2>
-                <div class="[&_p]:mb-6">
+                <div class="entry-content">
                     <?php the_field('two_col_block_people_desc'); ?>
                 </div>
                 <?php 
@@ -108,7 +110,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
                     </a>
                 <?php endif; ?>
             </div>
-            <div class="col-span-5">
+            <div class="md:col-span-5">
                 <?php
                     $image = function_exists('get_field') ? get_field('two_col_block_people_image') : null;
                     $size = 'full'; // (thumbnail, medium, large, full or custom size

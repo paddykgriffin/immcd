@@ -23,14 +23,14 @@
 	--color-card: var(--card);
 	--color-card-foreground: var(--card-foreground);
 
+	--color-border: var(--border);
+
 	--color-primary: var(--primary);
 	--color-secondary: var(--secondary);
 	--color-tertiary: var(--tertiary);
 
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
-
-	--color-border: var(--border);
 
 	/**
 	 * These are the default `font-family` theme variables included with

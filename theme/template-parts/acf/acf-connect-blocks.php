@@ -29,11 +29,11 @@ if ( is_page( 'connect' ) ): // page slug
                         $reverse = ( $index > 0 && $index % 2 === 0 ); // true for even rows
                         ?>
 
-                        <div class="grid grid-cols-12 py-20 items-center gap-16">
+                        <div class="grid md:grid-cols-12 py-20 items-center gap-16">
 
                         <?php if ( ! $reverse ): ?>
 
-                            <div class="col-span-8">
+                            <div class="md:col-span-8">
                                 <?php $title = get_sub_field('connect_block_title');
                                 if ( $title ): ?>
                                     <h2 class="text-4xl font-medium mb-4 text-primary"><?php echo esc_html( $title ); ?></h2>
@@ -41,7 +41,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                                 <?php $desc = get_sub_field('connect_block_desc');
                                 if ( $desc ):
-                                    echo '<p class="pb-6 leading-8">' . esc_html( wp_strip_all_tags( $desc ) ) . '</p>';
+                                    echo '<div class="entry-content"><p class="pb-6">' . esc_html( wp_strip_all_tags( $desc ) ) . '</p></div>';
                                 endif; ?>
 
                                 <?php 
@@ -57,7 +57,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                             </div>
 
-                            <div class="col-span-4">
+                            <div class="md:col-span-4">
                                 <!-- Image -->
                                 <?php
                                     $image = function_exists('get_sub_field') ? get_sub_field('connect_block_image') : null;
@@ -71,7 +71,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                         <?php else: // reversed: image first for even rows ?>
 
-                            <div class="col-span-4">
+                            <div class="md:col-span-4">
                                 <!-- Image -->
                                 <?php
                                     $image = function_exists('get_sub_field') ? get_sub_field('connect_block_image') : null;
@@ -83,7 +83,7 @@ if ( is_page( 'connect' ) ): // page slug
                                 <?php endif; ?>
                             </div>
 
-                            <div class="col-span-8">
+                            <div class="md:col-span-8">
                                 <?php $title = get_sub_field('connect_block_title');
                                 if ( $title ): ?>
                                     <h2 class="text-4xl font-medium mb-4 text-primary"><?php echo esc_html( $title ); ?></h2>
@@ -91,7 +91,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                               <?php $desc = get_sub_field('connect_block_desc');
                                 if ( $desc ):
-                                    echo '<p class="pb-6 leading-8">' . esc_html( wp_strip_all_tags( $desc ) ) . '</p>';
+                                    echo '<div class="entry-content"><p class="pb-6">' . esc_html( wp_strip_all_tags( $desc ) ) . '</p></div>';
                                 endif; ?>
 
                                 <?php 

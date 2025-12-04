@@ -37,6 +37,14 @@ h6 {
 }
 
 /* Block Editor Overwrite */
+.wp-block-button {
+	@apply !flex w-full justify-center md:inline-block md:w-auto;
+}
+
+.wp-block-buttons .wp-block-button__link {
+	@apply !w-[290px] md:w-auto;
+}
+
 .wp-block-button__link {
 	@apply hover:!bg-secondary mt-2 flex justify-between !rounded-full px-5 py-2 text-xl font-light transition-all duration-300;
 }
@@ -49,6 +57,6 @@ h6 {
 	@apply transition-all duration-300;
 }
 
-.page p {
-	@apply text-xl tracking-tight;
-}
+/* .page p {
+	@apply pb-3 text-2xl leading-8 tracking-tight;
+} */

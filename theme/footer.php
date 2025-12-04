@@ -18,5 +18,8 @@
 
 <?php wp_footer(); ?>
 
+<div id="overlay" data-state="closed" aria-hidden="true" class="fixed z-40 bg-black/50 transition-opacity duration-300 inset-0  opacity-0 hidden"></div>
+<?php get_template_part('template-parts/layout/nav/nav', 'slideout'); ?>
+
 </body>
 </html>

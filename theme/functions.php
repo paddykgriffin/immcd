@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.7' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.9' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
@@ -139,10 +139,23 @@ function immanuel_church_dublin_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	//posts-sidebarå
+	register_sidebar(
+		array(
+			'name'          => __( 'Posts Sidebar', 'immanuel-church-dublin' ),
+			'id'            => 'posts-sidebar',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'immanuel-church-dublin' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s mb-8">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'immanuel_church_dublin_widgets_init' );
 
-/**
+/** 
  * Enqueue scripts and styles.
  */
 function immanuel_church_dublin_scripts() {
@@ -307,3 +320,64 @@ add_filter('nav_menu_link_attributes', 'add_primary_menu_link', 10, 4);
 add_image_size('tile-sm', 200, 200, true);
 add_image_size('tile-md', 400, 400, true);
 add_image_size('tile-lg', 800, 800, true);
+
+
+add_image_size('post-tile', 250, 250, true);
+
+add_image_size(name: 'heroMobile', width: 400, height: 800, crop: true);
+add_image_size(name: 'heroInnerMobile', width: 400, height: 200, crop: true);
+
+
+function custom_search_form($form)
+{
+	$form = '
+    <form role="search" method="get" class="search-form" action="' . esc_url(home_url('/')) . '">
+        <label class="sr-only">
+           Search
+        </label>
+		 <input type="search" class="search-field" placeholder="' . esc_attr__('Search', '_bless') . '" value="' . get_search_query() . '" name="s" />
+        <button type="submit" class="search-submit">
+            <span class="material-symbols-outlined text-primary">search</span>
+        </button>
+    </form>';
+	return $form;
+}
+add_filter('get_search_form', 'custom_search_form');
+
+
+class Walker_Nav_Menu_With_Button extends Walker_Nav_Menu {
+
+    // Start each element output
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $has_children = in_array( 'menu-item-has-children', $classes );
+
+        // Determine if this item is the current page
+        $is_current = in_array( 'current-menu-item', $classes ) || in_array( 'current_page_item', $classes ) || in_array( 'current-menu-ancestor', $classes );
+
+        // Build list item
+        $output .= '<li class="' . esc_attr( implode( ' ', $classes ) ) . '">';
+
+        // Build link attributes
+        $attributes  = ' class="nav-mobile-link"';
+        $attributes .= ' href="' . esc_url( $item->url ) . '"';
+        if ( $is_current ) {
+            $attributes .= ' aria-current="page"';
+        }
+
+        // Output link
+        $output .= '<a' . $attributes . '>' . esc_html( $item->title ) . '</a>';
+
+        // Add submenu toggle button if applicable
+        if ( $has_children ) {
+            $output .= '<button class="submenu-toggle" aria-expanded="false" aria-label="Toggle submenu">'
+                     . '<span class="material-symbols-outlined !block !text-[30px]">add</span>'
+                     . '</button>';
+        }
+    }
+
+    // End each element
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= '</li>';
+    }
+}
