@@ -1,0 +1,44 @@
+/* Nav */
+.navigation {
+	@apply mt-5;
+}
+.nav-links {
+	@apply mt-10 flex items-center justify-between gap-3;
+}
+.nav-previous {
+	@apply hover:bg-secondary rounded-full bg-gray-200 px-8 py-2 hover:text-white;
+}
+.nav-next {
+	@apply bg-primary hover:bg-secondary rounded-full px-8 py-2 text-white;
+}
+.nav-previous span {
+	@apply first:font-semibold last:hidden;
+}
+.nav-next span {
+	@apply first:font-semibold last:hidden;
+}
+
+/* Nav - Page Numbers
+*
+* As shown on Posts List Page
+*
+*/
+.nav-links .page-numbers {
+	@apply w-[50px] rounded-full py-3 text-center hover:bg-gray-200;
+}
+
+.nav-links .page-numbers.current {
+	@apply bg-primary hover:bg-secondary text-white;
+}
+
+.nav-links .page-numbers.next {
+	@apply hover:text-secondary h-auto w-auto hover:bg-transparent;
+}
+
+.nav-links .page-numbers.prev {
+	@apply hover:text-secondary h-auto w-auto hover:bg-transparent;
+}
+
+.posts-content .nav-links {
+	@apply justify-start;
+}

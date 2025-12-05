@@ -32,8 +32,8 @@ get_header();
 
 <section id="posts" class="md:py-20">
 		<div class="container">
-			<div class="grid md:grid-cols-12 md:gap-16 xl:gap-0">
-				<div class="md:col-span-8 xl:col-span-8 posts-content">
+			<div class="grid md:grid-cols-12 md:gap-16">
+				<div class="md:col-span-9 posts-content">
 
 					<?php
 				if (have_posts()) {
@@ -73,7 +73,7 @@ get_header();
 
 			</div>
 			<?php if (is_active_sidebar('posts-sidebar')) : ?>
-				<aside class="md:col-start-9 xl:col-start-10 md:col-span-4 xl:col-span-3 pt-8 posts-sidebar" role="complementary" aria-label="<?php esc_attr_e('Footer', '_tw'); ?>">
+				<aside class="md:col-span-3 posts-sidebar" role="complementary" aria-label="<?php esc_attr_e('Footer', '_tw'); ?>">
 					<?php echo get_search_form(); ?>
 					<?php dynamic_sidebar('posts-sidebar'); ?>
 				</aside>

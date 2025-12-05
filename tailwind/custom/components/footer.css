@@ -1,0 +1,22 @@
+/* Footer Menu */
+
+.footer-menu {
+	@apply grid grid-cols-2 gap-2;
+}
+
+.footer-menu a,
+.contact-footer-menu a {
+	@apply inline-block transition-all duration-300 after:block after:h-[1px] after:w-0 after:bg-gray-400 after:transition-all after:duration-300 after:content-[''] hover:text-gray-400 hover:after:w-full;
+}
+
+.link-hover {
+	@apply after:block after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:text-gray-400 hover:after:w-full;
+}
+
+.privacy-footer-menu {
+	@apply flex justify-center gap-2 md:justify-start;
+}
+
+.privacy-footer-menu a {
+	@apply pl-1 after:block after:h-[1px] after:w-0 after:bg-gray-400 after:transition-all after:duration-300 after:content-[''] hover:text-gray-400 hover:after:w-full md:before:mr-2 md:before:content-['/'];
+}

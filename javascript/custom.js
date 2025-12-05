@@ -48,13 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Accordion (Contact Page)
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtns = document.querySelectorAll('.imml-accordion .accordion-btn');
+  const toggleBtns = document.querySelectorAll('.accordion .accordion-btn');
   toggleBtns.forEach(btn => {
+    // Ensure next div starts as hidden
+    const nextDiv = btn.nextElementSibling;
+    if (nextDiv && nextDiv.tagName === 'DIV') {
+      nextDiv.classList.add('hidden');
+      nextDiv.classList.remove('block');
+    }
+
     btn.addEventListener('click', function () {
-      this.classList.toggle('active'); // Toggle class on button
-      const nextDiv = this.nextElementSibling;
-      if (nextDiv && nextDiv.tagName === 'DIV') {
-        nextDiv.classList.toggle('active');
+      const contentDiv = this.nextElementSibling;
+      if (contentDiv && contentDiv.tagName === 'DIV') {
+        contentDiv.classList.toggle('hidden');
+        contentDiv.classList.toggle('block');
+        
+        // Toggle aria-expanded attribute
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
       }
     });
   });

@@ -9,9 +9,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* body {
-	@apply font-display;
-} */
+/* Container */
+.container {
+	@apply mx-auto px-8;
+}
 
 h2,
 h3,
@@ -57,6 +58,24 @@ h6 {
 	@apply transition-all duration-300;
 }
 
-/* .page p {
-	@apply pb-3 text-2xl leading-8 tracking-tight;
-} */
+/* Buttons */
+.btn {
+	@apply bg-primary hover:bg-secondary border-primary inline-flex items-center justify-between rounded-full border-1 py-2 pr-3 pl-6 text-xl font-light text-white transition-all duration-300;
+}
+
+.btn svg,
+.btn span {
+	@apply ml-12;
+}
+
+.btn-outline {
+	@apply border-primary text-primary hover:bg-secondary dark:hover:text-primary inline-flex items-center justify-between rounded-full border-1 py-2 pr-3 pl-6 text-xl font-light transition-all duration-300 hover:text-white dark:border-white dark:text-white dark:hover:bg-white;
+}
+
+.btn-outline-white {
+	@apply hover:text-primary inline-flex items-center justify-between rounded-full border-1 border-white py-2 pr-3 pl-6 text-white hover:bg-white;
+}
+
+.btn-outline svg {
+	@apply dark:text-white;
+}

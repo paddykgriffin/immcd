@@ -1,0 +1,25 @@
+/* Search Box */
+.search-form {
+	@apply mb-16 flex items-center justify-between rounded-full border-1 border-solid border-gray-400 bg-transparent px-6 text-black md:mb-24;
+}
+.search-form input {
+	@apply rounded-full border-0 bg-transparent py-3 text-black outline-none;
+}
+.search-form button {
+	@apply block h-[24px];
+}
+
+/* Posts - Search Form */
+.posts-content .search-form {
+	@apply md:hidden;
+}
+.posts-sidebar .search-form {
+	@apply hidden md:flex;
+}
+.posts-content .post-wrapper .entry-content {
+	@apply 2xl:py-0;
+}
+
+.posts-sidebar .search-form {
+	@apply mb-6;
+}

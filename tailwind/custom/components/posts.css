@@ -1,0 +1,39 @@
+/* Sidebar - Widget Block */
+.posts-sidebar .widget_block {
+	@apply rounded-xl bg-gray-200/50 px-6 py-4 pb-8 shadow-md;
+}
+.posts-sidebar .widget_block h2 {
+	@apply text-primary mb-0 pb-0 text-2xl;
+}
+.posts-sidebar .widget_block li {
+	@apply flex py-2;
+}
+.posts-sidebar .widget_block a {
+	@apply flex transition-all duration-300 hover:pl-3 hover:text-(--no1-red) dark:hover:text-(--no1-yellow);
+}
+
+/* Single Post */
+.single-post .entry-meta {
+	@apply mb-10 bg-gray-100 p-4;
+}
+.single-post .entry-title {
+	@apply pb-12 text-center;
+}
+.single-post .publish-author {
+	@apply hidden;
+}
+.single-post .publish-link {
+	@apply hidden;
+}
+.single-post .entry-footer {
+	@apply hidden;
+}
+.single-post .publish-date {
+	@apply border-r-2 border-gray-400 px-4;
+}
+.single-post .publish-category {
+	@apply px-4;
+}
+.single-post .category {
+	@apply flex gap-2;
+}

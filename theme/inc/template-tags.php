@@ -42,7 +42,7 @@ if ( ! function_exists( 'immanuel_church_dublin_posted_by' ) ) :
 	function immanuel_church_dublin_posted_by() {
 		printf(
 		/* translators: 1: posted by label, only visible to screen readers. 2: author link. 3: post author. */
-			'<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
+			'<div class="author"><span class="pr-2 text-sm">%1$s</span><span class="text-sm"><a href="%2$s">%3$s</a></span></div>',
 			esc_html__( 'Posted by', 'immanuel-church-dublin' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
@@ -65,7 +65,7 @@ if (!function_exists('immanuel_church_dublin_categories')):
 
 			foreach ($categories as $category) {
 				$category_links[] = '<a class="category-link default-transition" href="' . esc_url(get_category_link($category->term_id)) . '">
-					<span class="material-symbols-outlined text-[10px] text-(--no1-red) mr-2">inbox_text</span>' . esc_html($category->name) . '</a>';
+					<span class="material-symbols-outlined text-xs mr-2">inbox_text</span>' . esc_html($category->name) . '</a>';
 			}
 
 			$output .= implode($separator, $category_links);
@@ -113,7 +113,7 @@ if (!function_exists('immanuel_church_dublin_permalink')):
 	function immanuel_church_dublin_permalink()
 	{
 		printf(
-			'<div class="read-more"><a href="%1$s" class="btn text-white default-transition">%2$s<span class="material-symbols-outlined !text-[24px] ml-1">%3$s</span></a></div>',
+			'<div class="read-more"><a href="%1$s" class="text-primary flex items-center default-transition">%2$s<span class="material-symbols-outlined !text-[20px] ml-3">%3$s</span></a></div>',
 			esc_url(get_permalink()),
 			esc_html__('Read More', 'immanuel_church_dublin'),
 			'arrow_forward'
@@ -195,16 +195,16 @@ if (!function_exists('immanuel_church_dublin_entry_footer')):
 		if ('post' === get_post_type()) {
 
 			// Author
-			immanuel_church_dublin_posted_by();
+			//immanuel_church_dublin_posted_by();
 
 			// Date
-			immanuel_church_dublin_posted_on();
+			//immanuel_church_dublin_posted_on();
 
 			// Category
-			immanuel_church_dublin_categories();
+			//immanuel_church_dublin_categories();
 
 			// Tags
-			immanuel_church_dublin_tags();
+			//immanuel_church_dublin_tags();
 		}
 
 		// Comment count.

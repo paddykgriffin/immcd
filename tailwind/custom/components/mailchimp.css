@@ -1,0 +1,24 @@
+/* Mailchimp Widget */
+.mailchimp-widget .mc4wp-form input[type="email"] {
+	@apply mb-0 w-full border-1 border-gray-300 bg-white p-2;
+}
+
+.mailchimp-widget h4 {
+	@apply font-heading text-foreground mb-2 pb-0 text-xl font-medium;
+}
+
+.mailchimp-widget .mc4wp-form input[type="submit"] {
+	@apply bg-primary hover:bg-secondary px-6 py-2 font-normal text-white transition-all duration-300;
+}
+
+.mailchimp-widget .mc4wp-form label {
+	@apply sr-only;
+}
+
+.mailchimp-widget .mc4wp-form-fields .wrap {
+	@apply flex flex-row items-center;
+}
+
+.mailchimp-widget ::placeholder {
+	@apply text-gray-400;
+}

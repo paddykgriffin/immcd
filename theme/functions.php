@@ -381,3 +381,21 @@ class Walker_Nav_Menu_With_Button extends Walker_Nav_Menu {
         $output .= '</li>';
     }
 }
+
+/**
+ * Excerpt length
+ */
+function custom_excerpt_length($length)
+{
+	return 20; // Set to 30 words
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+/**
+ * Function to change continue reading to a string
+ */
+function custom_excerpt_more($more)
+{
+	return '..'; // Removes the default "..."
+}
+add_filter('excerpt_more', 'custom_excerpt_more');

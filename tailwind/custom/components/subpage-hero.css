@@ -1,0 +1,7 @@
+/* Inner Page Banner */
+.inner-page-banner figure {
+	@apply col-start-1 row-start-1;
+}
+.inner-page-banner figure img {
+	@apply w-full;
+}

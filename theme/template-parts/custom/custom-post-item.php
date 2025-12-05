@@ -1,21 +1,19 @@
- <article id="post-item-<?php the_ID(); ?>" class="post-wrapper items-center bg-gray-100">
+ <article id="post-item-<?php the_ID(); ?>" class="flex items-center bg-gray-100 shadow-md">
      <div class="entry-thumbnail  w-1/4">
          <?php immanuel_church_dublin_post_thumbnail(); ?>
      </div>
-     <div class="entry-content w-3/4 px-4 py-8 lg:py-8 ">
+     <div class="entry-content w-3/4 px-4 py-4 ">
          <header class="entry-header md:max-w-none">
              <div class="entry-meta  mb-2">
-                 <?php /* bcc_entry_meta(); */ ?>
-                 <?php /*bcc_categories(); */ ?>
                  <?php
                     $categories = get_the_category();
                     if (!empty($categories)) {
-                        echo '<span class="cat-links flex">';
+                        echo '<div class="categories flex">';
                         $limited_categories = array_slice($categories, 0, 2);
                         foreach ($limited_categories as $category) {
-                            echo '<a class="category-link default-transition pr-2" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag"><span class="material-symbols-outlined text-[10px] text-(--no1-red) mr-2">inbox_text</span>' . esc_html($category->name) . '</a> ';
+                            echo '<a class="category-link default-transition pr-2" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag"><span class="material-symbols-outlined">inbox_text</span>' . esc_html($category->name) . '</a> ';
                         }
-                        echo '</span>';
+                        echo '</div>';
                     }
                     ?>
                  <?php immanuel_church_dublin_tags(); ?>
@@ -30,7 +28,7 @@
                 if (is_singular()):
                     the_title(sprintf('<h2 class="post-title default-transition"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
                 else:
-                    the_title(sprintf('<h2 class="post-title default-transition"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
+                    the_title(sprintf('<h2 class="text-3xl mb-4 pb-0 default-transition"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
                 endif;
                 ?>
 
