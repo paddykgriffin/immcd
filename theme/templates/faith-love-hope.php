@@ -14,9 +14,9 @@ get_header();
         <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
         <!-- Inner Page Hero/Featured Image -->
 
-        <section <?php immanuel_church_dublin_content_class( 'entry-content container py-12 lg:py-16 text-center' ); ?>>
+        <section <?php immanuel_church_dublin_content_class( 'entry-content  py-12 lg:py-16 text-center' ); ?>>
 
-
+<div class="container md:max-w-(--container-content)">
             <?php
             the_content();
             wp_link_pages(
@@ -26,6 +26,7 @@ get_header();
                 )
             );
             ?>
+            </div>
         </section>
         <!-- .entry-content -->
 

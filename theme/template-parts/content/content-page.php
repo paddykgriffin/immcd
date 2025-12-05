@@ -15,7 +15,9 @@
 <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
  <!-- Inner Page Hero/Featured Image -->
 
-	<section <?php immanuel_church_dublin_content_class( 'entry-content container py-12 lg:py-16 ' ); ?>>
+	<section <?php immanuel_church_dublin_content_class( 'entry-content py-12 lg:py-16 ' ); ?>>
+
+	<div class="container md:max-w-(--container-content)">
 		<?php
 		the_content();
 
@@ -26,6 +28,7 @@
 			)
 		);
 		?>
+		</div>
 	</section><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

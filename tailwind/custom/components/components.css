@@ -68,7 +68,7 @@
 }
 
 .entry-content p {
-	@apply mb-6 text-lg leading-8 md:text-2xl;
+	@apply mb-6 max-w-none text-lg leading-8 md:text-xl;
 }
 
 .entry-content a {

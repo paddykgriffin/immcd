@@ -3,78 +3,93 @@
  *
  */
 
-/* Sermon Home page */
-.enmse-player {
-	@apply !m-0 grid items-center md:grid-cols-2;
-}
-.enmse-content-container {
-	@apply px-8 md:p-4;
+#seriesengine * {
+	@apply !box-border;
 }
 
-.enmse-poweredby {
-	@apply hidden;
+.home-sermons #seriesengine {
+	@apply max-w-(--container-content);
 }
 
+/* .enmse-content-container {
+	@apply bg-white;
+} */
+
+.enmse-poweredby,
 .enmse-modern-player-tabs {
 	@apply hidden;
 }
 
-#seriesengine h2.enmse-modern-message-title {
-	@apply font-heading text-foreground !text-2xl font-medium md:!text-3xl;
+/* Filters */
+#seriesengine .enmse-selector {
+	@apply mb-10 grid gap-6 bg-gray-100 px-6 py-3 md:grid-cols-3;
 }
+#seriesengine .enmse-selector.three select {
+	@apply !w-full;
+}
+#seriesengine .enmse-selector.three select {
+	@apply h-auto !text-base;
+}
+
 #seriesengine h3.enmse-modern-message-meta {
-	@apply text-foreground !text-lg !not-italic;
+	@apply !m-0 !py-1 !text-base font-normal !not-italic;
 }
-.enmse-modern-scripture strong {
-	@apply font-medium;
-}
-.enmse-modern-scripture a {
-	@apply bg-white;
+#seriesengine .enmse-modern-message-title {
+	@apply !m-0 font-serif !font-medium;
 }
 
-#seriesengine
-	.enmse-player
-	.enmse-modern-player-details
-	p.enmse-modern-scripture
-	a {
-	@apply bg-white;
-}
-
-#seriesengine p {
-	@apply !leading-7 font-normal;
-}
-
+/* Player */
 #seriesengine .enmse-player {
-	@apply dark:bg-background bg-white;
+	@apply !mt-10 !mb-0 grid items-center gap-8 bg-white p-6 shadow-md md:grid-cols-2;
 }
 
-#seriesengine .enmse-player .enmse-modern-player-details h3 {
-	@apply font-heading text-foreground mt-4 !text-base font-semibold;
+/* Player - Left Col */
+#seriesengine .enmse-media-container.modern {
+	@apply p-0;
 }
 
-.enmse-related-topics {
-	@apply bg-red-500;
-}
+/* Player - Right Col */
 
+#seriesengine .enmse-player .enmse-modern-player-details {
+	@apply m-0;
+}
 #seriesengine
 	.enmse-player
 	.enmse-modern-player-details
-	p.enmse-related-topics
-	a:before {
-	@apply mr-2;
-}
-
-.sermons-page-wrapper #seriesengine .enmse-related-topics {
-	@apply flex flex-col gap-6 md:px-20;
+	p.enmse-message-description {
+	@apply m-0 py-3 text-center !text-sm leading-6 font-normal md:!text-sm;
 }
 
 #seriesengine
 	.enmse-player
 	.enmse-modern-player-details
 	p.enmse-modern-scripture {
-	@apply flex flex-col py-6 md:flex-row;
+	@apply m-0 flex flex-col py-3;
+}
+#seriesengine
+	.enmse-player
+	.enmse-modern-player-details
+	p.enmse-modern-scripture
+	strong {
+	@apply mb-2 !font-serif font-medium;
 }
 
+#seriesengine
+	.enmse-player
+	.enmse-modern-player-details
+	p.enmse-related-topics {
+	@apply m-0 flex flex-col justify-center py-3 text-center;
+}
+
+#seriesengine .enmse-player .enmse-modern-player-details h3 {
+	@apply m-0 p-0 py-3 font-serif !text-lg font-medium italic md:!text-lg;
+}
+
+#seriesengine .enmse-blank-p {
+	@apply hidden;
+}
+
+/* Links */
 #seriesengine
 	.enmse-player
 	.enmse-modern-player-details
@@ -82,217 +97,85 @@
 	a {
 	@apply text-primary;
 }
-
-#seriesengine .enmse-player .enmse-modern-player-details p {
-	@apply text-foreground !text-lg leading-8 md:!text-xl;
-}
-
 #seriesengine
 	.enmse-player
 	.enmse-modern-player-details
-	p.enmse-message-description {
-	@apply !text-lg leading-8 md:!text-xl;
+	p.enmse-related-topics
+	a {
+	@apply text-primary border-primary hover:bg-secondary mx-auto flex w-fit gap-2 rounded-full !border px-6 py-3 no-underline transition-all duration-300 hover:text-white;
 }
 
-#seriesengine
-	.enmse-player
-	.enmse-modern-player-details
-	p.enmse-modern-scripture {
-	@apply text-foreground;
+/* Sermons Page Wrapper */
+.sermons-page-wrapper #seriesengine .enmse-content-container {
+	@apply mx-auto max-w-(--container-content);
+}
+.sermons-page-wrapper #seriesengine .enmse-player {
+	@apply !mb-20;
 }
 
-#seriesengine #enmse-archive-thumbnails {
-	@apply m-0 w-full gap-5 md:gap-10;
+/* Sermons - More Messages */
+#seriesengine h3.enmse-more-title {
+	@apply !py-0 !text-xl !font-normal;
+}
+#seriesengine table.enmse-more-messages {
+	@apply !my-5;
+}
+#seriesengine table.enmse-more-messages tr.enmse-even td,
+#seriesengine table.enmse-more-messages tr.enmse-odd td {
+	@apply !py-3 !text-base sm:!text-base lg:!text-base;
 }
 
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb {
-	@apply shadow-md;
-}
-
-/* Home - Sermons */
-.home-sermons #seriesengine {
-	max-width: 760px;
-	margin: 0 auto;
-}
-
-/* Sermons - page */
-#seriesengine .enmse-selector {
-	@apply dark:bg-background m-0 mb-12 !box-border grid gap-4 bg-gray-100 p-4 md:grid-cols-3;
-}
-
-#seriesengine .enmse-selector.three select {
-	@apply !w-full border-gray-300 py-3 first:!w-full;
-}
-
-.sermons-page-wrapper #seriesengine {
-	@apply py-12;
-}
-
-.sermons-page-wrapper #seriesengine h3.enmse-more-title {
-	@apply pt-10;
-}
-
-.sermons-page-wrapper #seriesengine table.enmse-more-messages .enmse-odd {
-	@apply dark:bg-stone-800;
-}
-
-.sermons-page-wrapper #seriesengine table.enmse-more-messages .enmse-even {
-	@apply dark:bg-black;
-}
-
-#seriesengine table.enmse-more-messages tr.enmse-odd,
-#seriesengine table.enmse-more-messages tr.enmse-even {
-	@apply p-6;
-}
-
-.sermons-page-wrapper
-	#seriesengine
-	table.enmse-more-messages
-	.enmse-odd
-	td.enmse-title-cell,
-.sermons-page-wrapper
-	#seriesengine
-	table.enmse-more-messages
-	.enmse-even
-	td.enmse-title-cell {
-	@apply text-foreground !text-lg;
-}
-
-#seriesengine table.enmse-more-messages tr.enmse-even .enmse-speaker-cell,
-#seriesengine table.enmse-more-messages tr.enmse-odd .enmse-speaker-cell {
-	@apply text-foreground p-0 !text-lg;
-}
-#seriesengine
-	table.enmse-more-messages
-	tr.enmse-odd
-	td.enmse-date-cell.enmse-speaker-cell,
-#seriesengine
-	table.enmse-more-messages
-	tr.enmse-even
-	td.enmse-date-cell.enmse-speaker-cell {
-	@apply !text-lg;
-}
-
-#seriesengine table.enmse-more-messages tr.enmse-even td.enmse-date-cell,
-#seriesengine table.enmse-more-messages tr.enmse-odd td.enmse-date-cell {
-	@apply text-foreground !text-lg;
+#seriesengine table.enmse-more-messages .enmse-odd td.enmse-title-cell,
+#seriesengine table.enmse-more-messages .enmse-even td.enmse-title-cell {
+	@apply !text-lg !font-medium md:!text-lg;
 }
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-date-cell,
 #seriesengine table.enmse-more-messages .enmse-even td.enmse-date-cell {
-	@apply text-foreground !pb-0;
+	@apply !text-lg md:!text-lg;
 }
 
-#seriesengine table.enmse-more-messages .enmse-odd td.enmse-listen-cell,
-#seriesengine table.enmse-more-messages .enmse-even td.enmse-listen-cell {
-	@apply block h-auto !text-lg leading-9;
+#seriesengine table.enmse-more-messages .enmse-odd td.enmse-watch-cell,
+#seriesengine table.enmse-more-messages .enmse-even td.enmse-watch-cell,
+#seriesengine table.enmse-more-messages .enmse-odd td.enmse-alternate-cell,
+#seriesengine table.enmse-more-messages .enmse-even td.enmse-alternate-cell {
+	@apply !hidden;
 }
 
-.sermons-page-wrapper #seriesengine a:link {
-	@apply bg-primary h-auto rounded-full px-4 py-2 text-white no-underline;
+#seriesengine table.enmse-more-messages td.enmse-listen-cell {
+	@apply !w-[125px] !px-3 !py-3;
+}
+#seriesengine table.enmse-more-messages td.enmse-listen-cell a {
+	@apply bg-primary hover:bg-secondary rounded-full px-3 py-2 text-white no-underline;
 }
 
-#seriesengine
-	#enmse-archive-thumbnails
-	.enmse-archive-thumb
-	p.enmse-archive-link
-	a {
-	@apply bg-primary h-auto rounded-full px-4 py-2 text-white no-underline;
-}
-
-#seriesengine .page-numbers.current {
-	@apply bg-primary text-white;
+/* Pagination */
+#seriesengine .se-pagination {
+	@apply flex justify-center gap-2 p-0 pt-5;
 }
 
 #seriesengine a.page-numbers {
-	@apply hover:bg-gray-200 dark:text-white;
+	@apply bg-gray-300 !text-base leading-[30px] !text-black hover:bg-gray-600 hover:!text-white;
 }
 
-.sermons-page-wrapper #seriesengine a.page-numbers {
-	@apply dark:text-white dark:hover:bg-black;
+#seriesengine .page-numbers.current {
+	@apply bg-primary h-auto rounded-full !text-base leading-[30px] text-white;
 }
 
 #seriesengine a.next.page-numbers,
 #seriesengine a.previous.page-numbers {
-	@apply bg-primary mx-auto !box-border flex h-auto w-2/3 justify-between rounded-full px-6 py-2 !text-lg leading-8 font-normal text-white normal-case hover:bg-gray-300 md:w-auto md:bg-gray-200 dark:hover:bg-black;
+	@apply bg-gray-100 !text-base leading-[30px] hover:bg-gray-600 hover:!text-white;
 }
 
-#seriesengine a.next.page-numbers {
-	@apply dark:text-background;
+/* Sermons Archive */
+.sermons-archive-wrapper #seriesengine {
+	@apply max-w-(--container-wide);
 }
 
-#seriesengine a.page-numbers span {
-	@apply !box-border block leading-8;
+#seriesengine #enmse-archive-thumbnails {
+	@apply grid grid-cols-2 gap-6 md:grid-cols-3;
 }
-
-/* #seriesengine .page-numbers.current,
-#seriesengine .page-numbers.number,
-#seriesengine a.page-numbers.wide {
-	@apply block;
-}
-#seriesengine .displaying-num {
-	@apply block;
-} */
-
-#seriesengine .se-pagination {
-	@apply !box-border flex flex-col pt-10;
-}
-
-#seriesengine table.enmse-more-messages .enmse-odd td.enmse-listen-cell,
-#seriesengine table.enmse-more-messages .enmse-even td.enmse-listen-cell {
-	@apply pt-3;
-}
-
-#seriesengine .enmse-message-card .enmse-card-links .enmse-listen-cell a {
-	@apply bg-primary h-auto w-auto rounded-full px-4 py-2 !text-lg font-medium text-white;
-}
-
-#seriesengine .enmse-message-card h5 {
-	@apply p-0 !text-lg font-medium md:!text-xl;
-}
-#seriesengine .enmse-message-card h6 {
-	@apply p-0 !text-sm;
-}
-#seriesengine .enmse-message-card p.enmse-scripture-info {
-	@apply !p-0 !text-base;
-}
-#seriesengine .enmse-message-card p.enmse-speaker-name {
-	@apply !text-base;
-}
-
-#seriesengine .enmse-related-area.card-view {
-	@apply gap-5 md:gap-10;
-}
-#seriesengine .enmse-message-card {
-	@apply shadow-md;
-}
-
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb h4 {
-	@apply p-0 !text-lg font-medium;
-}
-
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb h5 {
-	@apply p-0 !text-lg;
-}
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb p {
-	@apply pb-3 !text-lg;
-}
-
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb a,
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb.odd a,
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb.middle a,
-#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb.even a {
-	@apply rounded-none bg-white p-0;
-}
-
-#seriesengine
-	#enmse-archive-thumbnails
-	.enmse-archive-thumb
-	p.enmse-archive-link {
-	@apply !text-lg;
-}
-
-#seriesengine table.enmse-more-messages td.enmse-watch-cell,
-#seriesengine table.enmse-more-messages td.enmse-alternate-cell {
-	@apply hidden;
+#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb,
+#seriesengine #enmse-archive-thumbnails .enmse-archive-thumb.middle {
+	@apply m-0 w-full bg-red-500;
 }

@@ -59,7 +59,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
                             <div>no image...</div>
                         <?php endif; ?>
                         <?php if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ): ?>
-                            <img class="col-start-1 row-start-1 w-full" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
+                            <img class="col-start-1 row-start-1 w-full md:w-1/2 md:mx-auto" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
                         <?php endif; ?>
 
                         <?php $title = get_sub_field('belief_description');
