@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.9' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.10' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
@@ -248,7 +248,7 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 function enqueue_google_fonts()
 {
-	wp_enqueue_style('google-quicksand', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+	wp_enqueue_style('google-poppins', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
@@ -258,9 +258,19 @@ add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
  */
 function enqueue_google_fonts2()
 {
-	wp_enqueue_style('google-source-sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+	wp_enqueue_style('google-noto-sans', 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts2');
+
+
+/**
+ * Function add google fonts to wp-head
+ */
+function enqueue_google_fonts3()
+{
+	wp_enqueue_style('google-noto-serif', 'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+}
+add_action('wp_enqueue_scripts', 'enqueue_google_fonts3');
 
 
 /**
