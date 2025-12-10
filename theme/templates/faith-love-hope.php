@@ -14,18 +14,17 @@ get_header();
         <?php get_template_part('template-parts/custom/custom', 'featured-image'); ?>
         <!-- Inner Page Hero/Featured Image -->
 
-        <section <?php immanuel_church_dublin_content_class( 'entry-content  py-12 lg:py-16 text-center' ); ?>>
-
-<div class="container md:max-w-(--container-content)">
-            <?php
-            the_content();
-            wp_link_pages(
-                array(
-                    'before' => '<div>' . __( 'Pages:', 'immanuel-church-dublin' ),
-                    'after'  => '</div>',
-                )
-            );
-            ?>
+        <section <?php immanuel_church_dublin_content_class( 'entry-content py-12 lg:py-16 text-center' ); ?>>
+            <div class="container md:max-w-(--container-content)">
+                <?php
+                the_content();
+                wp_link_pages(
+                    array(
+                        'before' => '<div>' . __( 'Pages:', 'immanuel-church-dublin' ),
+                        'after'  => '</div>',
+                    )
+                );
+                ?>
             </div>
         </section>
         <!-- .entry-content -->
@@ -42,7 +41,7 @@ get_header();
 
                          <?php $title = get_sub_field('value_title','option');
                                 if ( $title ): ?>
-                                <p class="text-5xl font-medium text-center leading-10 font-serif py-8"><?php echo esc_html( $title ); ?></p>
+                                <h3 class="text-4xl md:text-5xl font-medium text-center leading-10 font-serif py-8 mb-0"><?php echo esc_html( $title ); ?></h3>
                             <?php endif; ?>
 
                             <!-- Image -->
@@ -52,7 +51,7 @@ get_header();
                                 <div>no image...</div>
                             <?php endif; ?>
                             <?php if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ): ?>
-                                <img class="w-1/2 mx-auto" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
+                                <img class="lg:w-1/2 mx-auto" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
                             <?php endif; ?>
 
                            
@@ -63,7 +62,7 @@ get_header();
                                   <div class="text-center py-6">
                                       <?php $title = get_sub_field('text_line_one','option');
                                         if ( $title ): ?>
-                                        <p class="text-xl leading-8 font-serif pb-2 px-0 md:px-12"><?php echo esc_html( $title ); ?></p>
+                                        <p class="text-lg md:text-xl leading-8 font-serif pb-2 px-0 lg:px-12"><?php echo esc_html( $title ); ?></p>
                                     <?php endif; ?>
 
 
@@ -76,7 +75,7 @@ get_header();
 
                                     <?php $title = get_sub_field('text_line_two','option');
                                         if ( $title ): ?>
-                                        <p class="relative before:[content-''] before:block before:h-[1px] before:w-1/3 before:absolute before:left-1/2 before:-translate-x-1/2 before:bg-white before:top-10 text-xl leading-8 font-serif pt-16 pb-2 px-0 md:px-12"><?php echo esc_html( $title ); ?></p>
+                                        <p class="relative before:[content-''] before:block before:h-[1px] before:w-1/3 before:absolute before:left-1/2 before:-translate-x-1/2 before:bg-white before:top-10 text-lg md:text-xl leading-8 font-serif pt-16 pb-2 px-0 lg:px-12"><?php echo esc_html( $title ); ?></p>
                                     <?php endif; ?>
 
 
@@ -100,7 +99,7 @@ get_header();
                 </div>
 
                 <div class="bg-[#5a9690]  text-center text-white mx-auto max-w-7xl mt-10 py-6 shadow-lg">
-                    <p class="italic scripture-ref p-0 mb-0 !text-4xl">"<?php the_field('core_value_scripture_text', 'option')?>"</p>
+                    <p class="italic scripture-ref p-0 mb-0 !text-3xl md:!text-4xl">"<?php the_field('core_value_scripture_text', 'option')?>"</p>
                     <p class="italic font-serif pt-4"><?php the_field('core_value_scripture_reference', 'option')?></p>
                 </div>
             </div>

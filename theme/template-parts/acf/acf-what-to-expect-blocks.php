@@ -6,7 +6,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 
 <section <?php immanuel_church_dublin_content_class( 'py-12 md:py-24' ); ?>>
     <div class="container">
-        <div class="grid md:grid-cols-12 gap-16 items-center">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
             <div class="md:col-span-7">
                 <h2 class="entry-title text-primary"> <?php the_field('two_col_block_sundays_title'); ?></h2>
                 <div class="entry-content">
@@ -59,7 +59,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
                             <div>no image...</div>
                         <?php endif; ?>
                         <?php if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ): ?>
-                            <img class="col-start-1 row-start-1 w-full md:w-1/2 md:mx-auto" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
+                            <img class="col-start-1 row-start-1 w-full lg:w-1/2 md:mx-auto shadow-lg" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ?? '' ); ?>" />
                         <?php endif; ?>
 
                         <?php $title = get_sub_field('belief_description');
@@ -93,7 +93,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
 
 <section <?php immanuel_church_dublin_content_class( 'py-12 md:py-24' ); ?>>
     <div class="container">
-        <div class="grid md:grid-cols-12 gap-16 items-center">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
             <div class="md:col-span-7">
                 <h2 class="entry-title text-primary"> <?php the_field('two_col_block_people_title'); ?></h2>
                 <div class="entry-content">
@@ -113,7 +113,7 @@ if ( is_page( 'what-to-expect' ) ): // page slug
             <div class="md:col-span-5">
                 <?php
                     $image = function_exists('get_field') ? get_field('two_col_block_people_image') : null;
-                    $size = 'full'; // (thumbnail, medium, large, full or custom size
+                    $size = 'tile-lg'; // (thumbnail, medium, large, full or custom size
                     if ($image): ?>
                         <img class="" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                     <?php else: ?>

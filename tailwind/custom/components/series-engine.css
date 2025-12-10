@@ -8,11 +8,7 @@
 }
 
 .home-sermons #seriesengine {
-	@apply max-w-(--container-content) px-10;
-}
-
-.home-sermons #seriesengine .enmse-content-container {
-	@apply bg-red-500;
+	@apply max-w-(--container-content) px-6;
 }
 
 .enmse-poweredby,
@@ -25,7 +21,7 @@
 	@apply dark:bg-background mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-3 md:gap-6;
 }
 #seriesengine .enmse-selector.three select {
-	@apply placeholder:text-body !h-auto !w-full !text-base first:!w-full first:!text-base;
+	@apply !h-auto !w-full !text-base first:!w-full first:!text-base;
 }
 #seriesengine .enmse-selector.three select option {
 	@apply bg-red-500;
@@ -35,7 +31,7 @@
 	@apply !m-0 !py-1 !text-base font-normal !not-italic dark:text-white;
 }
 #seriesengine h2.enmse-modern-message-title {
-	@apply !m-0 font-serif !font-medium dark:text-white;
+	@apply !m-0 font-serif !text-2xl !font-medium dark:text-white;
 }
 
 /* Player */
@@ -82,14 +78,12 @@
 }
 
 #seriesengine .enmse-player .enmse-modern-player-details h3 {
-	@apply m-0 p-0 py-3 font-serif !text-lg font-medium italic md:!text-lg;
+	@apply m-0 p-0 py-3 font-serif !text-lg font-medium italic md:!text-lg dark:text-white;
 }
 
 #seriesengine .enmse-blank-p {
 	@apply hidden;
 }
-
-/* Links */
 
 #seriesengine .enmse-player .enmse-modern-player-details .enmse-related-topics {
 	@apply pt-3;
@@ -162,10 +156,14 @@
 
 /* Sermons - More Messages */
 #seriesengine h3.enmse-more-title {
-	@apply !py-0 !pb-3 !text-xl !font-normal dark:text-white;
+	@apply !text-primary !py-0 !text-xl !font-normal;
+}
+
+#seriesengine .enmse-related-area {
+	@apply mb-10;
 }
 #seriesengine table.enmse-more-messages {
-	@apply !my-5;
+	@apply !mb-10;
 }
 
 #seriesengine table.enmse-more-messages tr.enmse-odd {
@@ -177,17 +175,17 @@
 
 #seriesengine table.enmse-more-messages tr.enmse-even td,
 #seriesengine table.enmse-more-messages tr.enmse-odd td {
-	@apply !py-3 !text-base sm:!text-base lg:!text-base dark:text-white;
+	@apply !text-base sm:!text-base md:!py-3 lg:!text-base dark:text-white;
 }
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-title-cell,
 #seriesengine table.enmse-more-messages .enmse-even td.enmse-title-cell {
-	@apply !text-lg !font-medium md:!text-lg dark:text-white;
+	@apply !p-0 !text-lg !font-medium md:!text-lg dark:!text-white;
 }
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-date-cell,
 #seriesengine table.enmse-more-messages .enmse-even td.enmse-date-cell {
-	@apply !text-lg md:!text-lg dark:text-white;
+	@apply !p-0 !text-lg md:!text-lg dark:text-white;
 }
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-watch-cell,
@@ -198,7 +196,7 @@
 }
 
 #seriesengine table.enmse-more-messages td.enmse-listen-cell {
-	@apply !w-[125px] !px-3 !py-3;
+	@apply block !p-0 !px-3 !py-6 md:inline-block md:!w-[125px] md:!py-3;
 }
 #seriesengine table.enmse-more-messages td.enmse-listen-cell a {
 	@apply bg-primary hover:bg-secondary rounded-full px-3 py-2 text-white no-underline;
@@ -305,4 +303,19 @@
 
 #seriesengine .enmse-message-card .enmse-card-links .enmse-listen-cell a {
 	@apply bg-primary hover:bg-secondary !h-auto !w-auto rounded-full px-4 py-2 !text-base text-white no-underline transition-all duration-300;
+}
+
+#seriesengine .enmse-share-details.modern ul {
+	@apply flex justify-center gap-2;
+}
+
+#seriesengine .enmse-share-details.modern ul li.enmse-facebook,
+#seriesengine .enmse-share-details.modern ul li.enmse-twitter,
+#seriesengine .enmse-share-details.modern ul li.enmse-share-link,
+#seriesengine .enmse-share-details.modern ul li.enmse-email {
+	@apply m-0;
+}
+
+#seriesengine .enmse-share-details.modern ul li a {
+	@apply dark:!bg-primary before:!opacity-100 dark:!text-white;
 }

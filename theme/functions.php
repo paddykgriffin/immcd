@@ -329,11 +329,9 @@ add_filter('nav_menu_link_attributes', 'add_primary_menu_link', 10, 4);
  */
 add_image_size('tile-sm', 200, 200, true);
 add_image_size('tile-md', 400, 400, true);
-add_image_size('tile-lg', 800, 800, true);
-
-
+add_image_size('tile-lg', 600, 600, true);
+add_image_size('tile-xl', 800, 800, true);
 add_image_size('post-tile', 250, 250, true);
-
 add_image_size(name: 'heroMobile', width: 400, height: 800, crop: true);
 add_image_size(name: 'heroInnerMobile', width: 400, height: 200, crop: true);
 

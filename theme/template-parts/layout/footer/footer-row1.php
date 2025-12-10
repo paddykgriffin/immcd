@@ -1,7 +1,7 @@
 <div class="py-8 md:py-12">
     <div class="container">
         <div class="">
-             <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" class="w-20 md:w-36 border-white/45 rounded-full  border-1" />
+             <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>" class="w-20 md:w-20 xl:w-36 border-white/45 rounded-full  border-1" />
             
                 <!-- Buttons Loop -->
                 <?php if (have_rows('icons', 'option')): ?>
@@ -35,7 +35,7 @@
          <div class="">
               <div class="grid gap-6 md:grid-cols-12">
 
-            <div class="md:col-span-8">
+            <div class="md:col-span-12 lg:col-span-8">
 
                
 
@@ -116,7 +116,7 @@
 
             </div>
 
-            <div class="md:col-span-4">
+            <div class="md:col-span-12 lg:col-span-4">
                 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
                     <aside role="complementary" class="mailchimp-widget" aria-label="<?php esc_attr_e( 'Mailchimp', 'immanuel-church-dublin' ); ?>">
                         <?php dynamic_sidebar( 'sidebar-1' ); ?>

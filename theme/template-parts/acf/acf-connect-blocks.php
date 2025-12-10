@@ -33,7 +33,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                         <?php if ( ! $reverse ): ?>
 
-                            <div class="md:col-span-8">
+                            <div class="md:col-span-6 lg:col-span-8">
                                 <?php $title = get_sub_field('connect_block_title');
                                 if ( $title ): ?>
                                     <h2 class="text-4xl font-medium mb-4 text-primary"><?php echo esc_html( $title ); ?></h2>
@@ -50,14 +50,15 @@ if ( is_page( 'connect' ) ): // page slug
                                         <a href="<?php echo esc_url( $link1['url'] ); ?>"
                                             target="<?php echo esc_attr( $link1['target'] ?? '_self' ); ?>"
                                             class="btn">
-                                            <?php echo esc_html( $link1['title'] ); ?>
+                                            <!-- <?php echo esc_html( $link1['title'] ); ?> -->
+                                             Learn more
                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="!ml-16"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg>
                                         </a>
                                     <?php endif; ?>
 
                             </div>
 
-                            <div class="md:col-span-4">
+                            <div class="md:col-span-6 lg:col-span-4">
                                 <!-- Image -->
                                 <?php
                                     $image = function_exists('get_sub_field') ? get_sub_field('connect_block_image') : null;
@@ -71,7 +72,7 @@ if ( is_page( 'connect' ) ): // page slug
 
                         <?php else: // reversed: image first for even rows ?>
 
-                            <div class="md:col-span-4">
+                            <div class="md:col-span-6 lg:col-span-4">
                                 <!-- Image -->
                                 <?php
                                     $image = function_exists('get_sub_field') ? get_sub_field('connect_block_image') : null;
@@ -83,7 +84,7 @@ if ( is_page( 'connect' ) ): // page slug
                                 <?php endif; ?>
                             </div>
 
-                            <div class="md:col-span-8">
+                            <div class="md:col-span-6 lg:col-span-8">
                                 <?php $title = get_sub_field('connect_block_title');
                                 if ( $title ): ?>
                                     <h2 class="text-4xl font-medium mb-4 text-primary"><?php echo esc_html( $title ); ?></h2>
@@ -100,7 +101,8 @@ if ( is_page( 'connect' ) ): // page slug
                                         <a href="<?php echo esc_url( $link1['url'] ); ?>"
                                             target="<?php echo esc_attr( $link1['target'] ?? '_self' ); ?>"
                                             class="btn">
-                                            <?php echo esc_html( $link1['title'] ); ?>
+                                            <!-- <?php echo esc_html( $link1['title'] ); ?> -->
+                                             Learn more
                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="!ml-16"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg>
                                         </a>
                                     <?php endif; ?>
