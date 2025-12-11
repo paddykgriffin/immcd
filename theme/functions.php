@@ -407,3 +407,29 @@ function custom_excerpt_more($more)
 	return '..'; // Removes the default "..."
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
+
+
+add_filter( 'upload_dir', 'pg_mp3_sermons_year_only_upload_dir' );
+function pg_mp3_sermons_year_only_upload_dir( $dirs ) {
+
+    // Detect file being uploaded
+    if ( ! empty($_FILES['async-upload']['name']) ) {
+        $file = $_FILES['async-upload']['name'];
+
+        // Only act on MP3 files
+        if ( strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'mp3' ) {
+
+            $year   = date('Y');
+            $subdir = '/sermons/' . $year;
+
+            // Override subdir (remove month folder)
+            $dirs['subdir'] = $subdir;
+
+            // Recalculate path + URL
+            $dirs['path'] = $dirs['basedir'] . $subdir;
+            $dirs['url']  = $dirs['baseurl'] . $subdir;
+        }
+    }
+
+    return $dirs;
+}
