@@ -81,6 +81,10 @@
 	@apply m-0 p-0 py-3 font-serif !text-lg font-medium italic md:!text-lg dark:text-white;
 }
 
+#seriesengine .enmse-player .enmse-modern-player-details p {
+	@apply !text-center !text-base;
+}
+
 #seriesengine .enmse-blank-p {
 	@apply hidden;
 }
@@ -318,4 +322,8 @@
 
 #seriesengine .enmse-share-details.modern ul li a {
 	@apply dark:!bg-primary before:!opacity-100 dark:!text-white;
+}
+
+#seriesengine .enmse-from-a-series {
+	@apply pb-6;
 }

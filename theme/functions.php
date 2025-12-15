@@ -420,7 +420,7 @@ function pg_mp3_sermons_year_only_upload_dir( $dirs ) {
         if ( strtolower(pathinfo($file, PATHINFO_EXTENSION)) === 'mp3' ) {
 
             $year   = date('Y');
-            $subdir = '/sermons/' . $year;
+            $subdir = '/sermonaudio/' . $year;
 
             // Override subdir (remove month folder)
             $dirs['subdir'] = $subdir;
