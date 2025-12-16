@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title hidden">', '</h1>' ); ?>
 
 		<?php if ( ! is_page() ) : ?>
 			<div class="entry-meta">
@@ -49,7 +49,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer hidden">
 		<?php immanuel_church_dublin_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 

@@ -37,14 +37,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Apply Padding to Main
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//     const header = document.getElementById('masthead');
+//     const siteMain = document.getElementById('main');
+
+//     if (header && siteMain) {
+//         siteMain.style.marginTop = `${header.offsetHeight}px`
+//     }
+// });
+window.addEventListener("load", () => {
     const header = document.getElementById('masthead');
     const siteMain = document.getElementById('main');
 
     if (header && siteMain) {
-        siteMain.style.marginTop = `${header.offsetHeight}px`
+        siteMain.style.marginTop = `${header.offsetHeight}px`;
     }
 });
+
+function adjustMainMargin() {
+    const header = document.getElementById('masthead');
+    const siteMain = document.getElementById('main');
+
+    if (header && siteMain) {
+        siteMain.style.marginTop = `${header.offsetHeight}px`;
+    }
+}
+
+window.addEventListener("load", adjustMainMargin);
+window.addEventListener("resize", adjustMainMargin);
 
 // Accordion (Contact Page)
 document.addEventListener("DOMContentLoaded", () => {

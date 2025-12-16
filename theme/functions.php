@@ -433,3 +433,30 @@ function pg_mp3_sermons_year_only_upload_dir( $dirs ) {
 
     return $dirs;
 }
+
+
+// global $wp_post_types;
+// echo '<pre>';
+// print_r(array_keys($wp_post_types));
+// echo '</pre>';
+
+
+register_post_type('enmse_message', array(
+    'labels' => array(
+        'name' => 'Series Messages',
+        'singular_name' => 'Series Message',
+    ),
+    'public' => true,
+    'has_archive' => true, // must be true for archive page
+    'rewrite' => array('slug' => 'sermons'),
+    'supports' => array('title', 'editor', 'thumbnail'),
+));
+
+function custom_slim_seo_title_for_enmse_message($title) {
+    if (is_post_type_archive('enmse_message')) {
+        // Custom title for enmse_message archives
+        $title = 'Sermons | ' . get_bloginfo('name');
+    }
+    return $title;
+}
+add_filter('slim_seo_title', 'custom_slim_seo_title_for_enmse_message', 10, 1);
