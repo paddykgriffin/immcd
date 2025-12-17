@@ -145,6 +145,10 @@
 	@apply py-3 text-center font-serif dark:text-white;
 }
 
+#seriesengine .enmse-player h3 em {
+	@apply not-italic;
+}
+
 #seriesengine
 	.enmse-player
 	.enmse-modern-player-details
@@ -187,7 +191,7 @@
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-title-cell,
 #seriesengine table.enmse-more-messages .enmse-even td.enmse-title-cell {
-	@apply !p-0 !text-lg !font-medium md:!text-lg dark:!text-white;
+	@apply !p-0 !pl-6 !text-lg !font-medium md:!text-lg dark:!text-white;
 }
 
 #seriesengine table.enmse-more-messages .enmse-odd td.enmse-date-cell,
@@ -211,7 +215,7 @@
 
 /* Pagination */
 #seriesengine .se-pagination {
-	@apply flex justify-center gap-2 p-0 pt-5;
+	@apply flex justify-center gap-2 p-0 pt-12;
 }
 
 #seriesengine a.page-numbers {
@@ -262,7 +266,7 @@
 }
 
 #seriesengine .enmse-message-card h5 {
-	@apply !p-0 !pb-2 font-serif !text-lg !font-normal dark:text-white;
+	@apply text-primary !p-0 !px-10 font-serif !text-base !font-normal dark:text-white;
 }
 
 #seriesengine .enmse-message-card h6 {
@@ -270,7 +274,7 @@
 }
 
 #seriesengine .enmse-message-card p.enmse-speaker-name {
-	@apply !p-0 !text-base !font-normal not-italic dark:text-white;
+	@apply !p-0 !pb-4 font-serif !text-base !font-normal text-gray-600 not-italic dark:text-white;
 }
 
 #seriesengine #enmse-archive-thumbnails .enmse-archive-thumb p {
@@ -329,4 +333,8 @@
 
 #seriesengine .enmse-from-a-series {
 	@apply pb-6;
+}
+
+#seriesengine .enmse-from-a-series p {
+	@apply text-center !text-sm font-normal dark:text-white;
 }

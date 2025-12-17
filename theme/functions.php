@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '0.1.10' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '1.0.1' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
@@ -140,7 +140,7 @@ function immanuel_church_dublin_widgets_init() {
 		)
 	);
 
-	//posts-sidebarå
+	//posts-sidebar
 	register_sidebar(
 		array(
 			'name'          => __( 'Posts Sidebar', 'immanuel-church-dublin' ),
@@ -238,10 +238,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 
-/**
- * 
- * Custom Function added here
- */
+
 
 /**
  * Function add google fonts to wp-head
@@ -314,7 +311,6 @@ add_filter('edit_post_link', 'wpse_remove_edit_post_link');
  */
 function add_primary_menu_link($atts, $item, $args, $depth)
 {
-
 	$menu_locations = ['menu-1']; // Define the menu locations
 
 	if (in_array($args->theme_location, $menu_locations)) {
@@ -324,9 +320,15 @@ function add_primary_menu_link($atts, $item, $args, $depth)
 }
 add_filter('nav_menu_link_attributes', 'add_primary_menu_link', 10, 4);
 
+
+
+
 /**
- * Function - Tile/Square Images
+ * Function - Custom Image Sizes
+ * If you add new image sizes here, remember to regenerate your thumbnails
+ * using a plugin like Regenerate Thumbnails.
  */
+
 add_image_size('tile-sm', 200, 200, true);
 add_image_size('tile-md', 400, 400, true);
 add_image_size('tile-lg', 600, 600, true);
@@ -335,7 +337,9 @@ add_image_size('post-tile', 250, 250, true);
 add_image_size(name: 'heroMobile', width: 400, height: 800, crop: true);
 add_image_size(name: 'heroInnerMobile', width: 400, height: 200, crop: true);
 
-
+/**
+ * Function - Custom Search Form
+ */
 function custom_search_form($form)
 {
 	$form = '
@@ -353,6 +357,10 @@ function custom_search_form($form)
 add_filter('get_search_form', 'custom_search_form');
 
 
+
+/**
+ * Custom Walker Class to add button to menu items with children
+ */
 class Walker_Nav_Menu_With_Button extends Walker_Nav_Menu {
 
     // Start each element output
@@ -395,9 +403,11 @@ class Walker_Nav_Menu_With_Button extends Walker_Nav_Menu {
  */
 function custom_excerpt_length($length)
 {
-	return 20; // Set to 30 words
+	return 20; // Set to 20 words
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+
 
 /**
  * Function to change continue reading to a string
@@ -409,7 +419,9 @@ function custom_excerpt_more($more)
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 
-add_filter( 'upload_dir', 'pg_mp3_sermons_year_only_upload_dir' );
+/**
+ * Function to upload MP3 sermons to year only folder
+ */
 function pg_mp3_sermons_year_only_upload_dir( $dirs ) {
 
     // Detect file being uploaded
@@ -433,7 +445,12 @@ function pg_mp3_sermons_year_only_upload_dir( $dirs ) {
 
     return $dirs;
 }
+add_filter( 'upload_dir', 'pg_mp3_sermons_year_only_upload_dir' );
 
+
+/**
+ * Function to force custom page template for Sermons page - Removed for now.
+ */
 
 // function force_sermons_page_template($template) {
 //     if (is_page('sermons')) {

@@ -9,5 +9,5 @@
 
 ?>
 
-<?php get_template_part('template-parts/custom/custom', 'post-item'); ?>
+<?php get_template_part('template-parts/content/content', 'post'); ?>
 <!-- #post-${ID} -->
