@@ -18,6 +18,10 @@ get_header();
 
 <div class="grid grid-cols-12 gap-8">
 			<div class="col-span-8">
+
+			<?php
+echo 'Post Type: ' . get_post_type();
+?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">

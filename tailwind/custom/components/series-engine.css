@@ -20,11 +20,14 @@
 #seriesengine .enmse-selector {
 	@apply dark:bg-background mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-3 md:gap-6;
 }
-#seriesengine .enmse-selector.three select {
-	@apply !h-auto !w-full !text-base first:!w-full first:!text-base;
+
+#seriesengine .enmse-selector.four {
+	@apply dark:bg-background mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-4 md:gap-6;
 }
-#seriesengine .enmse-selector.three select option {
-	@apply bg-red-500;
+
+#seriesengine .enmse-selector.three select,
+#seriesengine .enmse-selector.four select {
+	@apply !h-auto !w-full !text-base first:!w-full first:!text-base;
 }
 
 #seriesengine h3.enmse-modern-message-meta {
@@ -160,7 +163,7 @@
 
 /* Sermons - More Messages */
 #seriesengine h3.enmse-more-title {
-	@apply !text-primary !py-0 !text-xl !font-normal;
+	@apply !text-primary !py-0 !pb-6 !text-xl !font-normal;
 }
 
 #seriesengine .enmse-related-area {

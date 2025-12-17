@@ -10,11 +10,17 @@
 get_header();
 ?>
 
+<?php
+echo 'Post Type: ' . get_post_type();
+?>
 	
 		<main id="main">
 			<section id="single" class="single-page-wrapper py-8 lg:py-16 ">
 <div class="container mx-auto px-4 py-8">
 		<div class="mx-auto text-left">
+
+
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :

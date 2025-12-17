@@ -9,10 +9,41 @@
 
 ?>
 
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header">
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        
+        <?php if ( ! is_page() ) : ?>
+            <div class="entry-meta">
+                <?php immanuel_church_dublin_entry_meta(); ?>
+            </div><!-- .entry-meta -->
+        <?php endif; ?>
+    </header><!-- .entry-header -->
+
+    <?php immanuel_church_dublin_post_thumbnail(); ?>
+
+    <div <?php immanuel_church_dublin_content_class( 'entry-content pt-10' ); ?>>
+        <?php
+        the_content();
+
+        wp_link_pages( array(
+            'before' => '<div>' . __( 'Pages:', 'immanuel-church-dublin' ),
+            'after'  => '</div>',
+        ));
+        ?>
+    </div><!-- .entry-content -->
+
+    <footer class="entry-footer hidden">
+        <?php immanuel_church_dublin_entry_footer(); ?>
+    </footer><!-- .entry-footer -->
+</article><!-- #post-${ID} -->
+
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('hidden'); ?>>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title hidden">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( ! is_page() ) : ?>
 			<div class="entry-meta">
