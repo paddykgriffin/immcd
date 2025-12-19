@@ -18,11 +18,11 @@
 
 /* Filters */
 #seriesengine .enmse-selector {
-	@apply dark:bg-background mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-3 md:gap-6;
+	@apply mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-3 md:gap-6 dark:bg-black;
 }
 
 #seriesengine .enmse-selector.four {
-	@apply dark:bg-background mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-4 md:gap-6;
+	@apply mb-10 grid gap-2 bg-gray-100 px-6 py-3 leading-6 md:grid-cols-4 md:gap-6 dark:bg-black;
 }
 
 #seriesengine .enmse-selector.three select,
@@ -31,15 +31,15 @@
 }
 
 #seriesengine h3.enmse-modern-message-meta {
-	@apply !m-0 !py-1 !text-base font-normal !not-italic dark:text-white;
+	@apply !m-0 !py-1 !text-2xl font-normal !not-italic dark:text-white;
 }
 #seriesengine h2.enmse-modern-message-title {
-	@apply !m-0 font-serif !text-2xl !font-medium dark:text-white;
+	@apply !m-0 font-serif !text-4xl !font-medium dark:text-white;
 }
 
 /* Player */
 #seriesengine .enmse-player {
-	@apply dark:bg-background !mt-10 !mb-0 grid items-center gap-8 bg-white p-6 shadow-md md:grid-cols-2 dark:text-white;
+	@apply !mt-10 !mb-0 grid items-center gap-8 bg-white p-6 shadow-md md:grid-cols-2 dark:bg-black dark:text-white;
 }
 
 /* Player - Left Col */

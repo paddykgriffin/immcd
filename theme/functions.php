@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '1.0.1' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '1.0.2' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
@@ -455,7 +455,7 @@ add_filter( 'upload_dir', 'pg_mp3_sermons_year_only_upload_dir' );
 // function force_sermons_page_template($template) {
 //     if (is_page('sermons')) {
 //         // Force the use of the custom page template for the "Sermons" page
-//         $custom_template = locate_template('page-sermons.php');
+//         $custom_template = locate_template('general-single-page.php');
 //         if ($custom_template) {
 //             return $custom_template; // Ensure WordPress uses this template
 //         }

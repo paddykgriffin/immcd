@@ -31,7 +31,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		<?php get_template_part( 'template-parts/acf/acf', 'people-blocks' ); ?>
+		
 		<?php get_template_part( 'template-parts/acf/acf', 'contact-widget' ); ?>
 
 	</main><!-- #main -->
