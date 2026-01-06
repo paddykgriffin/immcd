@@ -47,9 +47,10 @@ if ( is_page( 'what-to-expect' ) ): // page slug
         <p><?php the_field('what_believe_description'); ?></p>
     </div>
 
-            <div class="grid md:grid-cols-3 py-12 gap-8">
+          
                 <!-- Loop -->
                 <?php if (have_rows('our_beliefs')): ?>
+                      <div class="grid md:grid-cols-3 py-12 gap-8">
                     <?php while (have_rows('our_beliefs')): the_row(); ?>
                     <div>
                         <!-- Image -->
@@ -70,8 +71,9 @@ if ( is_page( 'what-to-expect' ) ): // page slug
                         <?php endif; ?>
                     </div>
                     <?php endwhile; ?>
+                    </div>
                 <?php endif; ?>
-            </div>
+            
 
                 
 

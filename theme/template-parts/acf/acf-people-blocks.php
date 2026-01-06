@@ -24,9 +24,9 @@
 
                             
 
-                                <h4 class="text-xl text-center pt-3 pb-0 mb-2 text-primary leading-6 md:leading-8 md:flex md:gap-[5px] md:justify-center">
-                                        <span class="block "> <?php the_sub_field('name'); ?></span>
-                                        <span class="block "> <?php the_sub_field('last_name'); ?></span>
+                                <h4 class="text-lg text-center pt-3 pb-0 mb-2 text-primary leading-6 md:leading-8 md:flex md:gap-[5px] md:justify-center">
+                                        <span class="block"> <?php the_sub_field('name'); ?></span>
+                                        <span class="block"> <?php the_sub_field('last_name'); ?></span>
                                     </h4>
                                 <?php if (!empty(get_sub_field('role'))): ?>
                                     <p class="text-center text-lg text-gray-600 leading-6 md:leading-8 font-light">

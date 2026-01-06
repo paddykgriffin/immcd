@@ -52,10 +52,10 @@
                             if ( ! empty( $title ) ) {
                                 echo '<p class="text-white pb-4 !text-base">' . esc_html( $title ) . '</p>';
                             } else {
-                                echo '<p class="pb-4 text-white !text-base">Lorem ipsum dolor sit amet, consectetur.</p>';
+                                echo '<p class="pb-4 text-white !text-base">Have a question? Get in touch to learn more</p>';
                             }
                         } else {
-                            echo '<p class="pb-10 !text-base">Lorem ipsum dolor sit amet, consectetur.</p>';
+                            echo '<p class="pb-10 !text-base">Have a question? Get in touch to learn more</p>';
                         }
                         ?>
             
@@ -72,12 +72,12 @@
                                 echo '<a class="btn-outline-white default-transition" href="' . $href . '">' . $text . '
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white !ml-16 group-hover:text-primary dark:group-hover:text-primary"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg></a>';
                             } else {
-                                echo '<a class="btn-outline-white default-transition" href="mailto:example@example.com">Email Us     
+                                echo '<a class="btn-outline-white default-transition" href="mailto:immanuel@immanuelchurchdublin.org">Email Us     
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white !ml-16 group-hover:text-primary dark:group-hover:text-primary"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg>
                                     </a>';
                             }
                         } else {
-                            echo '<a class="btn-outline-white default-transition" href="mailto:example@example.com">Email Us<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white !ml-16 group-hover:text-primary dark:group-hover:text-primary"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg>
+                            echo '<a class="btn-outline-white default-transition" href="mailto:immanuel@immanuelchurchdublin.org ">Email Us<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-white !ml-16 group-hover:text-primary dark:group-hover:text-primary"><path fill="currentColor" d="M4 12h12.25L11 6.75l.66-.75l6.5 6.5l-6.5 6.5l-.66-.75L16.25 13H4z"/></svg>
                                    </a>';
                         }
                         ?>

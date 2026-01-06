@@ -11,11 +11,11 @@
 
 <header id="masthead" class="bg-white dark:bg-black fixed z-[40] w-full top-0 shadow-xl py-3 dark:border-b dark:border-gray-500">
 
-	<div class="container">
+	<div class="container max-w-[96rem]"> 
 
 		<div class="grid grid-cols-2 lg:grid-cols-12 gap-6 md:gap-6 justify-between">
 
-			<div class="lg:col-span-10 flex gap-6 items-center">
+			<div class="lg:col-span-11 flex gap-6 items-center">
 				<?php
 				if ( is_front_page() ) :
 					?>
@@ -38,7 +38,7 @@
 				<?php endif; ?>
 			
 
-			<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'immanuel-church-dublin' ); ?>" class="pl-10 flex">
+			<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'immanuel-church-dublin' ); ?>" class="pl-6 flex">
 				<!-- <button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'immanuel-church-dublin' ); ?></button> -->
 
 				<?php
@@ -47,7 +47,7 @@
 						'theme_location' => 'menu-1',
 									'container' => false,
 									'menu_id' => 'primary-menu', 
-									'menu_class' => ' gap-12 lg:gap-8 xl:gap-12 hidden xl:flex',
+									'menu_class' => ' gap-12 lg:gap-8 2xl:gap-12 hidden xl:flex', 
 									'items_wrap' => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
 					)
 				);
@@ -55,7 +55,7 @@
 			</nav><!-- #site-navigation -->
 			</div>
 
-			<div class="lg:col-span-2 grid items-center">
+			<div class="lg:col-span-1 grid items-center">
 				<div class="flex justify-end">
 					<div class="hidden xl:block">
 						<?php get_template_part('template-parts/layout/header/header', 'mode'); ?>
