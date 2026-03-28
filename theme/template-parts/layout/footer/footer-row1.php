@@ -73,17 +73,13 @@
                     </div>
 
                     <div>
-                        <?php 
-                        $field_group = acf_get_field_group( 'group_6928ccca45a92' );
-                        if ( $field_group ) : ?>
-                            <h3 class="text-white text-[24px] font-medium pb-4 dark:text-white">
-                                <?php echo esc_html( $field_group['title'] ); ?>
+                       <h3 class="text-white text-[24px] font-medium pb-4 dark:text-white">
+                               Get in Touch
                             </h3>
-                        <?php endif; ?>
 
                         <div class="grid gap-3">
 
-                            <div>
+                            <div class="hidden">
                                 <a class="link-hover inline-block  " href="<?php echo esc_url( 'tel:' . antispambot( get_field('contact_tel', 'option') ) ); ?>">
                                 (01) <?php the_field('contact_tel','option'); ?>
                                 </a>

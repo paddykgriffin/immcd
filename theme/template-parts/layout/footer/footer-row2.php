@@ -12,10 +12,12 @@
                     <?php echo date("Y"); ?>
                     <?php bloginfo('name'); ?> .</span>
                 <span class="block lg:inline pb-2 lg:pb-0">All rights reserved</span>
-                <!-- <span class="block lg:inline bg-red-500">
+
+                |
+              
                     <?php the_field('charity_label', 'option'); ?>
                     <?php the_field('charity_number', 'option'); ?>
-                </span> -->
+                
 
                 <div class=" pl-3">
                      <?php if ( has_nav_menu( 'menu-4' ) ) : ?>

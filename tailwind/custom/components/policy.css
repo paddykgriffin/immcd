@@ -1,0 +1,10 @@
+/* Policy Lists - files  */
+.policy-list {
+	@apply my-18 grid gap-4 lg:grid-cols-2;
+}
+.policy-block {
+	@apply text-primary hover:bg-primary dark:bg-primary dark:hover:bg-secondary flex items-center justify-between gap-3 rounded-xl bg-gray-200/50 px-3 py-5 hover:text-white dark:text-white;
+}
+.policy-block h4 {
+	@apply text-primary m-0 p-0 text-xl font-semibold dark:text-white;
+}

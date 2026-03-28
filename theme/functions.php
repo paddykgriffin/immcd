@@ -15,7 +15,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '1.0.2' );
+	define( 'IMMANUEL_CHURCH_DUBLIN_VERSION', '1.1.2' );
 }
 
 if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
@@ -27,7 +27,7 @@ if ( ! defined( 'IMMANUEL_CHURCH_DUBLIN_TYPOGRAPHY_CLASSES' ) ) {
 	 * function. You will see that function used everywhere an `entry-content`
 	 * or `page-content` class has been added to a wrapper element.
 	 *
-	 * For the block editor, these classes are converted to a JavaScript array
+	 * For the block editor, these classes are converted to a JavaScript arrays
 	 * and then used by the `./javascript/block-editor.js` file, which adds
 	 * them to the appropriate elements in the block editor (and adds them
 	 * again when they’re removed.)

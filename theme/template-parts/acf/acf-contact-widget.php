@@ -1,6 +1,6 @@
 <?php
 /**
- * Donate Widget Template Part
+ * Contact Widget ACF Template Part
  *
  * @package immanuel-church-dublin
  */

@@ -19,6 +19,7 @@ get_header();
           <?php get_template_part( 'template-parts/acf/acf', 'connect-blocks' ); ?>
           <?php get_template_part( 'template-parts/acf/acf', 'what-to-expect-blocks' ); ?>
           <?php get_template_part( 'template-parts/custom/custom', 'sermons' ); ?>
+           <?php get_template_part( 'template-parts/acf/acf', 'policies' ); ?>
           <?php get_template_part( 'template-parts/acf/acf', 'contact-widget' ); ?>
     </div>
 </main><!-- #main -->

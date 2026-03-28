@@ -1,4 +1,7 @@
 
+<?php
+if ( is_page( 'our-people' ) ): // page slug
+?>
 
 
 <section <?php immanuel_church_dublin_content_class( 'py-12 md:py-16' ); ?>>
@@ -50,3 +53,6 @@
 
 
 
+<?php
+endif;
+?>
